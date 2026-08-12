@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Proactive Multi-Signal Autoscaler — Simulation Dashboard</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+  <h1>Proactive, Multi-Signal SLO- &amp; Cost-Aware Autoscaling — Simulation Dashboard</h1>
+  <p>Forecast-driven scaling on p90/p99 latency, CPU, RAM, and connection-pool utilization — no Kubernetes required, closed-loop queueing simulator.</p>
+</header>
+
+<div class="controls">
+  <div class="tab-group" id="patternTabs">
+    <button data-pattern="bursty" class="active">Bursty</button>
+    <button data-pattern="queue_driven">Queue-driven</button>
+    <button data-pattern="mixed">Mixed</button>
+  </div>
+</div>
+
+<main>
+  <div class="section-title">Time series — selected workload pattern</div>
+  <p class="section-sub">All four controllers replay the identical demand trace. Control loop evaluates every 15s; the proactive controller additionally forecasts 45s ahead.</p>
+  <div class="grid" id="timeseriesGrid"></div>
+
+  <div class="section-title">Cross-workload comparison (averaged over bursty / queue-driven / mixed)</div>
+  <p class="section-sub">Matches the reference paper's four evaluation categories: SLO adherence, responsiveness, cost, stability.</p>
+  <div class="grid" id="comparisonGrid"></div>
+
+  <div class="section-title">Forecast accuracy — proactive controller</div>
+  <p class="section-sub">Holt's damped-trend forecaster (45s lead time) vs. a naive persistence baseline, evaluated against realized ground truth.</p>
+  <div id="forecastTableWrap"></div>
+
+  <div class="section-title">Overload-prediction classification quality</div>
+  <p class="section-sub">Binary "will p99 breach the 300ms SLO in 45s?" — precision/recall/F1/accuracy for the forecaster vs. the naive persistence model.</p>
+  <div id="classTableWrap"></div>
+</main>
+
+<footer>Generated locally by the Node.js simulation engine (src/engine). No external data or services used.</footer>
+
+<script src="charts.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,3816 @@
+{
+  "generatedAt": "2026-07-29T11:55:23.188Z",
+  "horizonS": 45,
+  "canonicalSeed": 42,
+  "replicateSeeds": [
+    42,
+    7,
+    13,
+    19,
+    23,
+    31,
+    37,
+    41
+  ],
+  "runs": [
+    {
+      "pattern": "bursty",
+      "controller": "default_hpa",
+      "label": "Default HPA",
+      "controlIntervalS": 15,
+      "metrics": {
+        "slo": {
+          "count": 73,
+          "durationSeconds": 539
+        },
+        "cost": {
+          "avgReplicas": 15.983333333333333,
+          "nodeHours": 2.5125,
+          "avgNodes": 2.5125
+        },
+        "stability": {
+          "churnEvents": 29,
+          "churnPerHour": 29,
+          "oscillations": 12,
+          "oscillationsPerHour": 12,
+          "pendingUnschedulableSeconds": 90
+        },
+        "timeToScale": {
+          "events": 9,
+          "avgTimeToScaleSeconds": 266.6666666666667,
+          "p90TimeToScaleSeconds": 300
+        }
+      },
+      "forecast": null,
+      "classification": null,
+      "classificationWindowed": null,
+      "thresholdSweep": null
+    },
+    {
+      "pattern": "bursty",
+      "controller": "tuned_hpa",
+      "label": "Tuned HPA",
+      "controlIntervalS": 15,
+      "metrics": {
+        "slo": {
+          "count": 12,
+          "durationSeconds": 196
+        },
+        "cost": {
+          "avgReplicas": 31.7625,
+          "nodeHours": 5.870833333333334,
+          "avgNodes": 5.870833333333334
+        },
+        "stability": {
+          "churnEvents": 78,
+          "churnPerHour": 78,
+          "oscillations": 17,
+          "oscillationsPerHour": 17,
+          "pendingUnschedulableSeconds": 75
+        },
+        "timeToScale": {
+          "events": 9,
+          "avgTimeToScaleSeconds": 23.88888888888889,
+          "p90TimeToScaleSeconds": 41
+        }
+      },
+      "forecast": null,
+      "classification": null,
+      "classificationWindowed": null,
+      "thresholdSweep": null
+    },
+    {
+      "pattern": "bursty",
+      "controller": "hpa_vpa",
+      "label": "HPA + VPA (reactive multi-metric)",
+      "controlIntervalS": 15,
+      "metrics": {
+        "slo": {
+          "count": 12,
+          "durationSeconds": 146
+        },
+        "cost": {
+          "avgReplicas": 36.17916666666667,
+          "nodeHours": 5.870833333333334,
+          "avgNodes": 5.870833333333334
+        },
+        "stability": {
+          "churnEvents": 111,
+          "churnPerHour": 111,
+          "oscillations": 17,
+          "oscillationsPerHour": 17,
+          "pendingUnschedulableSeconds": 75
+        },
+        "timeToScale": {
+          "events": 9,
+          "avgTimeToScaleSeconds": 22.22222222222222,
+          "p90TimeToScaleSeconds": 35
+        }
+      },
+      "forecast": null,
+      "classification": null,
+      "classificationWindowed": null,
+      "thresholdSweep": null
+    },
+    {
+      "pattern": "bursty",
+      "controller": "reactive_multi_signal",
+      "label": "Reactive Multi-Signal (same signals, no forecast)",
+      "controlIntervalS": 15,
+      "metrics": {
+        "slo": {
+          "count": 12,
+          "durationSeconds": 146
+        },
+        "cost": {
+          "avgReplicas": 36.17916666666667,
+          "nodeHours": 5.870833333333334,
+          "avgNodes": 5.870833333333334
+        },
+        "stability": {
+          "churnEvents": 111,
+          "churnPerHour": 111,
+          "oscillations": 17,
+          "oscillationsPerHour": 17,
+          "pendingUnschedulableSeconds": 75
+        },
+        "timeToScale": {
+          "events": 9,
+          "avgTimeToScaleSeconds": 22.22222222222222,
+          "p90TimeToScaleSeconds": 35
+        }
+      },
+      "forecast": null,
+      "classification": null,
+      "classificationWindowed": null,
+      "thresholdSweep": null
+    },
+    {
+      "pattern": "bursty",
+      "controller": "proactive",
+      "label": "Proactive Multi-Signal (proposed)",
+      "controlIntervalS": 15,
+      "metrics": {
+        "slo": {
+          "count": 10,
+          "durationSeconds": 134
+        },
+        "cost": {
+          "avgReplicas": 36.329166666666666,
+          "nodeHours": 5.845833333333333,
+          "avgNodes": 5.845833333333333
+        },
+        "stability": {
+          "churnEvents": 103,
+          "churnPerHour": 103,
+          "oscillations": 17,
+          "oscillationsPerHour": 17,
+          "pendingUnschedulableSeconds": 75
+        },
+        "timeToScale": {
+          "events": 9,
+          "avgTimeToScaleSeconds": 20.555555555555557,
+          "p90TimeToScaleSeconds": 41
+        }
+      },
+      "forecast": {
+        "p99": {
+          "model": {
+            "n": 3555,
+            "mae": 1972.4951059177,
+            "rmse": 8528.061013711897,
+            "mape": 1388.8058894566864,
+            "smape": 39.18344510756393,
+            "accuracyPct": 80.40827744621804,
+            "r2": -3.6869882304958344
+          },
+          "holtOnly": {
+            "n": 3555,
+            "mae": 3048.635672178358,
+            "rmse": 13059.623575226258,
+            "mape": 2452.1911341788186,
+            "smape": 46.83533010597281,
+            "accuracyPct": 76.58233494701359,
+            "r2": -9.991439751515076
+          },
+          "persistence": {
+            "n": 3555,
+            "mae": 1206.494484426518,
+            "rmse": 5951.550108338019,
+            "mape": 640.1999776814969,
+            "smape": 29.253024956098784,
+            "accuracyPct": 85.37348752195061,
+            "r2": -1.2827242588847692
+          },
+          "movingAverage": {
+            "n": 3555,
+            "mae": 1283.549361919636,
+            "rmse": 5344.345503073898,
+            "mape": 687.5245095742602,
+            "smape": 32.707717408189865,
+            "accuracyPct": 83.64614129590507,
+            "r2": -0.8406970609370674
+          },
+          "linearDrift": {
+            "n": 3555,
+            "mae": 4085.0850764359852,
+            "rmse": 17729.67299824927,
+            "mape": 3394.2349180509573,
+            "smape": 67.07592711464551,
+            "accuracyPct": 66.46203644267725,
+            "r2": -19.257913696069725
+          }
+        },
+        "cpu": {
+          "model": {
+            "n": 3555,
+            "mae": 12.114419486977374,
+            "rmse": 24.90194666885402,
+            "mape": 94.27802342402562,
+            "smape": 48.455728899797286,
+            "accuracyPct": 75.77213555010135,
+            "r2": -1.3294239896460582
+          },
+          "holtOnly": {
+            "n": 3555,
+            "mae": 14.382373852136942,
+            "rmse": 30.768638622311762,
+            "mape": 121.22970933845016,
+            "smape": 57.46259645348141,
+            "accuracyPct": 71.2687017732593,
+            "r2": -2.55630097201617
+          },
+          "persistence": {
+            "n": 3555,
+            "mae": 11.485145980711845,
+            "rmse": 21.439163888194837,
+            "mape": 87.70869345071134,
+            "smape": 43.07017975250266,
+            "accuracyPct": 78.46491012374867,
+            "r2": -0.7266234492138981
+          },
+          "movingAverage": {
+            "n": 3555,
+            "mae": 12.424021346940416,
+            "rmse": 21.45305502011924,
+            "mape": 99.34070407058354,
+            "smape": 47.80922890052497,
+            "accuracyPct": 76.09538554973751,
+            "r2": -0.7288616451149375
+          },
+          "linearDrift": {
+            "n": 3555,
+            "mae": 24.510791167709638,
+            "rmse": 55.47820906809254,
+            "mape": 232.0718822431778,
+            "smape": 72.97218573695481,
+            "accuracyPct": 63.51390713152259,
+            "r2": -10.561836194628288
+          }
+        },
+        "ram": {
+          "model": {
+            "n": 3555,
+            "mae": 4.003144019283265,
+            "rmse": 5.7334058697565204,
+            "mape": 9.179346462310326,
+            "smape": 8.886973180640963,
+            "accuracyPct": 95.55651340967952,
+            "r2": 0.28026901520687575
+          },
+          "holtOnly": {
+            "n": 3555,
+            "mae": 3.9870732360678405,
+            "rmse": 5.816017847108623,
+            "mape": 9.068496702971032,
+            "smape": 8.80511253248146,
+            "accuracyPct": 95.59744373375926,
+            "r2": 0.2593785477415048
+          },
+          "persistence": {
+            "n": 3555,
+            "mae": 4.5775718875689755,
+            "rmse": 6.440740792343337,
+            "mape": 10.62443691729654,
+            "smape": 10.224523272690535,
+            "accuracyPct": 94.88773836365473,
+            "r2": 0.0917268647170636
+          },
+          "movingAverage": {
+            "n": 3555,
+            "mae": 5.293947942420911,
+            "rmse": 7.350349712928243,
+            "mape": 12.358325610892322,
+            "smape": 11.81708255001053,
+            "accuracyPct": 94.09145872499474,
+            "r2": -0.18293486179383334
+          },
+          "linearDrift": {
+            "n": 3555,
+            "mae": 5.9833641001839455,
+            "rmse": 10.03858678782419,
+            "mape": 13.71416463654164,
+            "smape": 13.471281499832136,
+            "accuracyPct": 93.26435925008393,
+            "r2": -1.2064291284632351
+          }
+        },
+        "pool": {
+          "model": {
+            "n": 3555,
+            "mae": 10.02544966948724,
+            "rmse": 26.81381494049724,
+            "mape": 40.90239326113289,
+            "smape": 26.47990467373561,
+            "accuracyPct": 86.7600476631322,
+            "r2": -2.5417798020027544
+          },
+          "holtOnly": {
+            "n": 3555,
+            "mae": 14.04837800467769,
+            "rmse": 38.683419045813174,
+            "mape": 62.513420504178605,
+            "smape": 31.81560856602988,
+            "accuracyPct": 84.09219571698506,
+            "r2": -6.37146904641418
+          },
+          "persistence": {
+            "n": 3555,
+            "mae": 7.969825231982033,
+            "rmse": 20.830732983169398,
+            "mape": 29.84245940432454,
+            "smape": 20.168032966210003,
+            "accuracyPct": 89.915983516895,
+            "r2": -1.1375360379968238
+          },
+          "movingAverage": {
+            "n": 3555,
+            "mae": 8.197888322845472,
+            "rmse": 19.683637630548287,
+            "mape": 30.72630556367562,
+            "smape": 21.74291981194719,
+            "accuracyPct": 89.1285400940264,
+            "r2": -0.90860063480658
+          },
+          "linearDrift": {
+            "n": 3555,
+            "mae": 21.357424604821144,
+            "rmse": 55.22835996706775,
+            "mape": 101.08745911988942,
+            "smape": 43.693274901889936,
+            "accuracyPct": 78.15336254905503,
+            "r2": -14.025489701770574
+          }
+        }
+      },
+      "classification": {
+        "model": {
+          "tp": 0,
+          "fp": 124,
+          "fn": 118,
+          "tn": 3313,
+          "precision": 0,
+          "recall": 0,
+          "f1": null,
+          "accuracy": 0.9319268635724332
+        },
+        "persistence": {
+          "tp": 0,
+          "fp": 134,
+          "fn": 118,
+          "tn": 3303,
+          "precision": 0,
+          "recall": 0,
+          "f1": null,
+          "accuracy": 0.9291139240506329
+        }
+      },
+      "classificationWindowed": {
+        "model": {
+          "tp": 103,
+          "fp": 21,
+          "fn": 386,
+          "tn": 3090,
+          "precision": 0.8306451612903226,
+          "recall": 0.21063394683026584,
+          "f1": 0.33605220228384985,
+          "accuracy": 0.8869444444444444
+        },
+        "persistence": {
+          "tp": 125,
+          "fp": 9,
+          "fn": 364,
+          "tn": 3057,
+          "precision": 0.9328358208955224,
+          "recall": 0.2556237218813906,
+          "f1": 0.4012841091492777,
+          "accuracy": 0.8950773558368496
+        }
+      },
+      "thresholdSweep": {
+        "bestF1": {
+          "threshold": 133.0037706365812,
+          "precision": 0.37181409295352325,
+          "recall": 0.5071574642126789,
+          "f1": 0.42906574394463665
+        },
+        "prAuc": 0.46661002706728005,
+        "nThresholds": 3600
+      }
+    },
+    {
+      "pattern": "queue_driven",
+      "controller": "default_hpa",
+      "label": "Default HPA",
+      "controlIntervalS": 15,
+      "metrics": {
+        "slo": {
+          "count": 326,
+          "durationSeconds": 938
+        },
+        "cost": {
+          "avgReplicas": 13.816666666666666,
+          "nodeHours": 2.5791666666666666,
+          "avgNodes": 2.5791666666666666
+        },
+        "stability": {
+          "churnEvents": 37,
+          "churnPerHour": 37,
+          "oscillations": 6,
+          "oscillationsPerHour": 6,
+          "pendingUnschedulableSeconds": 90
+        },
+        "timeToScale": {
+          "events": 5,
+          "avgTimeToScaleSeconds": 52,
+          "p90TimeToScaleSeconds": 97
+        }
+      },
+      "forecast": null,
+      "classification": null,
+      "classificationWindowed": null,
+      "thresholdSweep": null
+    },
+    {
+      "pattern": "queue_driven",
+      "controller": "tuned_hpa",
+      "label": "Tuned HPA",
+      "controlIntervalS": 15,
+      "metrics": {
+        "slo": {
+          "count": 26,
+          "durationSeconds": 179
+        },
+        "cost": {
+          "avgReplicas": 19.254166666666666,
+          "nodeHours": 4.995833333333334,
+          "avgNodes": 4.995833333333334
+        },
+        "stability": {
+          "churnEvents": 68,
+          "churnPerHour": 68,
+          "oscillations": 10,
+          "oscillationsPerHour": 10,
+          "pendingUnschedulableSeconds": 75
+        },
+        "timeToScale": {
+          "events": 5,
+          "avgTimeToScaleSeconds": 35.6,
+          "p90TimeToScaleSeconds": 67
+        }
+      },
+      "forecast": null,
+      "classification": null,
+      "classificationWindowed": null,
+      "thresholdSweep": null
+    },
+    {
+      "pattern": "queue_driven",
+      "controller": "hpa_vpa",
+      "label": "HPA + VPA (reactive multi-metric)",
+      "controlIntervalS": 15,
+      "metrics": {
+        "slo": {
+          "count": 22,
+          "durationSeconds": 161
+        },
+        "cost": {
+          "avgReplicas": 20.783333333333335,
+          "nodeHours": 4.995833333333334,
+          "avgNodes": 4.995833333333334
+        },
+        "stability": {
+          "churnEvents": 86,
+          "churnPerHour": 86,
+          "oscillations": 10,
+          "oscillationsPerHour": 10,
+          "pendingUnschedulableSeconds": 75
+        },
+        "timeToScale": {
+          "events": 5,
+          "avgTimeToScaleSeconds": 35.6,
+          "p90TimeToScaleSeconds": 67
+        }
+      },
+      "forecast": null,
+      "classification": null,
+      "classificationWindowed": null,
+      "thresholdSweep": null
+    },
+    {
+      "pattern": "queue_driven",
+      "controller": "reactive_multi_signal",
+      "label": "Reactive Multi-Signal (same signals, no forecast)",
+      "controlIntervalS": 15,
+      "metrics": {
+        "slo": {
+          "count": 22,
+          "durationSeconds": 161
+        },
+        "cost": {
+          "avgReplicas": 20.783333333333335,
+          "nodeHours": 4.995833333333334,
+          "avgNodes": 4.995833333333334
+        },
+        "stability": {
+          "churnEvents": 86,
+          "churnPerHour": 86,
+          "oscillations": 10,
+          "oscillationsPerHour": 10,
+          "pendingUnschedulableSeconds": 75
+        },
+        "timeToScale": {
+          "events": 5,
+          "avgTimeToScaleSeconds": 35.6,
+          "p90TimeToScaleSeconds": 67
+        }
+      },
+      "forecast": null,
+      "classification": null,
+      "classificationWindowed": null,
+      "thresholdSweep": null
+    },
+    {
+      "pattern": "queue_driven",
+      "controller": "proactive",
+      "label": "Proactive Multi-Signal (proposed)",
+      "controlIntervalS": 15,
+      "metrics": {
+        "slo": {
+          "count": 18,
+          "durationSeconds": 156
+        },
+        "cost": {
+          "avgReplicas": 19.720833333333335,
+          "nodeHours": 4.995833333333334,
+          "avgNodes": 4.995833333333334
+        },
+        "stability": {
+          "churnEvents": 81,
+          "churnPerHour": 81,
+          "oscillations": 15,
+          "oscillationsPerHour": 15,
+          "pendingUnschedulableSeconds": 75
+        },
+        "timeToScale": {
+          "events": 5,
+          "avgTimeToScaleSeconds": 35.6,
+          "p90TimeToScaleSeconds": 67
+        }
+      },
+      "forecast": {
+        "p99": {
+          "model": {
+            "n": 3555,
+            "mae": 1484.1053832265673,
+            "rmse": 7797.116581661175,
+            "mape": 602.0689311211053,
+            "smape": 31.52750509725894,
+            "accuracyPct": 84.23624745137053,
+            "r2": -1.463285995093063
+          },
+          "holtOnly": {
+            "n": 3555,
+            "mae": 1968.8426752800056,
+            "rmse": 10151.18023355202,
+            "mape": 913.0103054820804,
+            "smape": 38.450060547696694,
+            "accuracyPct": 80.77496972615165,
+            "r2": -3.1752247620874696
+          },
+          "persistence": {
+            "n": 3555,
+            "mae": 1189.8227833526055,
+            "rmse": 6479.7458332258775,
+            "mape": 414.9227039685676,
+            "smape": 27.028501499561457,
+            "accuracyPct": 86.48574925021927,
+            "r2": -0.7012287922888123
+          },
+          "movingAverage": {
+            "n": 3555,
+            "mae": 1241.627523460729,
+            "rmse": 6390.5106788950225,
+            "mape": 491.226258139689,
+            "smape": 26.51660501796846,
+            "accuracyPct": 86.74169749101577,
+            "r2": -0.6546948374591783
+          },
+          "linearDrift": {
+            "n": 3555,
+            "mae": 2603.822460930177,
+            "rmse": 13523.25691627095,
+            "mape": 1388.2886449256455,
+            "smape": 61.79965995567256,
+            "accuracyPct": 69.10017002216372,
+            "r2": -6.409849375058856
+          }
+        },
+        "cpu": {
+          "model": {
+            "n": 3555,
+            "mae": 9.172673999037073,
+            "rmse": 16.221562283324484,
+            "mape": 33.78236791616996,
+            "smape": 26.61399347915078,
+            "accuracyPct": 86.6930032604246,
+            "r2": 0.37244741770287737
+          },
+          "holtOnly": {
+            "n": 3555,
+            "mae": 10.363704399875102,
+            "rmse": 18.0574495283847,
+            "mape": 38.09469858390269,
+            "smape": 32.79858201153396,
+            "accuracyPct": 83.60070899423302,
+            "r2": 0.22236180501639957
+          },
+          "persistence": {
+            "n": 3555,
+            "mae": 8.889703908325886,
+            "rmse": 15.658417199118226,
+            "mape": 34.05182566619886,
+            "smape": 25.44308229077713,
+            "accuracyPct": 87.27845885461143,
+            "r2": 0.4152631222489098
+          },
+          "movingAverage": {
+            "n": 3555,
+            "mae": 9.855393150895488,
+            "rmse": 16.773899444878875,
+            "mape": 39.37777278141814,
+            "smape": 28.34776435515831,
+            "accuracyPct": 85.82611782242084,
+            "r2": 0.3289840636014767
+          },
+          "linearDrift": {
+            "n": 3555,
+            "mae": 15.987990811526975,
+            "rmse": 31.439260527186125,
+            "mape": 60.837625513909884,
+            "smape": 46.515960902835126,
+            "accuracyPct": 76.74201954858243,
+            "r2": -1.3572704355436809
+          }
+        },
+        "ram": {
+          "model": {
+            "n": 3555,
+            "mae": 3.324987105398971,
+            "rmse": 4.872656054372687,
+            "mape": 6.541996972012979,
+            "smape": 6.413028074325953,
+            "accuracyPct": 96.79348596283702,
+            "r2": 0.7708193843470607
+          },
+          "holtOnly": {
+            "n": 3555,
+            "mae": 3.201732094774718,
+            "rmse": 4.644494375820605,
+            "mape": 6.220117742688253,
+            "smape": 6.126969324653851,
+            "accuracyPct": 96.93651533767307,
+            "r2": 0.7917796124665436
+          },
+          "persistence": {
+            "n": 3555,
+            "mae": 3.8676266881376353,
+            "rmse": 5.706685120466673,
+            "mape": 7.713171655367239,
+            "smape": 7.507764522504264,
+            "accuracyPct": 96.24611773874787,
+            "r2": 0.6856494765754685
+          },
+          "movingAverage": {
+            "n": 3555,
+            "mae": 4.49428977608043,
+            "rmse": 6.613355728555592,
+            "mape": 9.032999184055072,
+            "smape": 8.743314456788047,
+            "accuracyPct": 95.62834277160597,
+            "r2": 0.5778273103500681
+          },
+          "linearDrift": {
+            "n": 3555,
+            "mae": 4.576707910792238,
+            "rmse": 7.365627139935329,
+            "mape": 8.933070496850707,
+            "smape": 8.810365566572823,
+            "accuracyPct": 95.5948172167136,
+            "r2": 0.47632019219741595
+          }
+        },
+        "pool": {
+          "model": {
+            "n": 3555,
+            "mae": 7.775686885785311,
+            "rmse": 17.74830676636301,
+            "mape": 24.418991813598343,
+            "smape": 19.939055785335093,
+            "accuracyPct": 90.03047210733246,
+            "r2": -0.3466016519978665
+          },
+          "holtOnly": {
+            "n": 3555,
+            "mae": 9.63396511371991,
+            "rmse": 22.51164337966759,
+            "mape": 30.902594814078032,
+            "smape": 24.13110408023837,
+            "accuracyPct": 87.93444795988081,
+            "r2": -1.1664052039937944
+          },
+          "persistence": {
+            "n": 3555,
+            "mae": 6.7575302156160255,
+            "rmse": 15.818955639175549,
+            "mape": 21.1502251805037,
+            "smape": 17.04877057096665,
+            "accuracyPct": 91.47561471451668,
+            "r2": -0.069746578545828
+          },
+          "movingAverage": {
+            "n": 3555,
+            "mae": 7.221947818156454,
+            "rmse": 16.21409829467308,
+            "mape": 22.889390947357125,
+            "smape": 18.18869044721352,
+            "accuracyPct": 90.90565477639323,
+            "r2": -0.12385658040682634
+          },
+          "linearDrift": {
+            "n": 3555,
+            "mae": 14.23738801917843,
+            "rmse": 32.05738831155305,
+            "mape": 48.3469748939682,
+            "smape": 35.913524970382966,
+            "accuracyPct": 82.04323751480851,
+            "r2": -3.3932059739530054
+          }
+        }
+      },
+      "classification": {
+        "model": {
+          "tp": 34,
+          "fp": 83,
+          "fn": 111,
+          "tn": 3327,
+          "precision": 0.2905982905982906,
+          "recall": 0.23448275862068965,
+          "f1": 0.25954198473282447,
+          "accuracy": 0.9454289732770745
+        },
+        "persistence": {
+          "tp": 41,
+          "fp": 93,
+          "fn": 104,
+          "tn": 3317,
+          "precision": 0.30597014925373134,
+          "recall": 0.2827586206896552,
+          "f1": 0.2939068100358423,
+          "accuracy": 0.9445850914205345
+        }
+      },
+      "classificationWindowed": {
+        "model": {
+          "tp": 126,
+          "fp": 13,
+          "fn": 321,
+          "tn": 3140,
+          "precision": 0.9064748201438849,
+          "recall": 0.28187919463087246,
+          "f1": 0.4300341296928328,
+          "accuracy": 0.9072222222222223
+        },
+        "persistence": {
+          "tp": 128,
+          "fp": 6,
+          "fn": 275,
+          "tn": 3146,
+          "precision": 0.9552238805970149,
+          "recall": 0.3176178660049628,
+          "f1": 0.4767225325884544,
+          "accuracy": 0.9209563994374121
+        }
+      },
+      "thresholdSweep": {
+        "bestF1": {
+          "threshold": 255.4680827728559,
+          "precision": 0.6652360515021459,
+          "recall": 0.34675615212527966,
+          "f1": 0.4558823529411765
+        },
+        "prAuc": 0.47695032515962577,
+        "nThresholds": 3600
+      }
+    },
+    {
+      "pattern": "mixed",
+      "controller": "default_hpa",
+      "label": "Default HPA",
+      "controlIntervalS": 15,
+      "metrics": {
+        "slo": {
+          "count": 55,
+          "durationSeconds": 345
+        },
+        "cost": {
+          "avgReplicas": 11.358333333333333,
+          "nodeHours": 1.6875,
+          "avgNodes": 1.6875
+        },
+        "stability": {
+          "churnEvents": 29,
+          "churnPerHour": 29,
+          "oscillations": 14,
+          "oscillationsPerHour": 14,
+          "pendingUnschedulableSeconds": 45
+        },
+        "timeToScale": {
+          "events": 9,
+          "avgTimeToScaleSeconds": 233.33333333333334,
+          "p90TimeToScaleSeconds": 300
+        }
+      },
+      "forecast": null,
+      "classification": null,
+      "classificationWindowed": null,
+      "thresholdSweep": null
+    },
+    {
+      "pattern": "mixed",
+      "controller": "tuned_hpa",
+      "label": "Tuned HPA",
+      "controlIntervalS": 15,
+      "metrics": {
+        "slo": {
+          "count": 14,
+          "durationSeconds": 139
+        },
+        "cost": {
+          "avgReplicas": 21.945833333333333,
+          "nodeHours": 5.870833333333334,
+          "avgNodes": 5.870833333333334
+        },
+        "stability": {
+          "churnEvents": 70,
+          "churnPerHour": 70,
+          "oscillations": 15,
+          "oscillationsPerHour": 15,
+          "pendingUnschedulableSeconds": 75
+        },
+        "timeToScale": {
+          "events": 9,
+          "avgTimeToScaleSeconds": 19.88888888888889,
+          "p90TimeToScaleSeconds": 52
+        }
+      },
+      "forecast": null,
+      "classification": null,
+      "classificationWindowed": null,
+      "thresholdSweep": null
+    },
+    {
+      "pattern": "mixed",
+      "controller": "hpa_vpa",
+      "label": "HPA + VPA (reactive multi-metric)",
+      "controlIntervalS": 15,
+      "metrics": {
+        "slo": {
+          "count": 10,
+          "durationSeconds": 119
+        },
+        "cost": {
+          "avgReplicas": 27.883333333333333,
+          "nodeHours": 5.870833333333334,
+          "avgNodes": 5.870833333333334
+        },
+        "stability": {
+          "churnEvents": 102,
+          "churnPerHour": 102,
+          "oscillations": 13,
+          "oscillationsPerHour": 13,
+          "pendingUnschedulableSeconds": 75
+        },
+        "timeToScale": {
+          "events": 9,
+          "avgTimeToScaleSeconds": 19.88888888888889,
+          "p90TimeToScaleSeconds": 67
+        }
+      },
+      "forecast": null,
+      "classification": null,
+      "classificationWindowed": null,
+      "thresholdSweep": null
+    },
+    {
+      "pattern": "mixed",
+      "controller": "reactive_multi_signal",
+      "label": "Reactive Multi-Signal (same signals, no forecast)",
+      "controlIntervalS": 15,
+      "metrics": {
+        "slo": {
+          "count": 10,
+          "durationSeconds": 119
+        },
+        "cost": {
+          "avgReplicas": 27.883333333333333,
+          "nodeHours": 5.870833333333334,
+          "avgNodes": 5.870833333333334
+        },
+        "stability": {
+          "churnEvents": 102,
+          "churnPerHour": 102,
+          "oscillations": 13,
+          "oscillationsPerHour": 13,
+          "pendingUnschedulableSeconds": 75
+        },
+        "timeToScale": {
+          "events": 9,
+          "avgTimeToScaleSeconds": 19.88888888888889,
+          "p90TimeToScaleSeconds": 67
+        }
+      },
+      "forecast": null,
+      "classification": null,
+      "classificationWindowed": null,
+      "thresholdSweep": null
+    },
+    {
+      "pattern": "mixed",
+      "controller": "proactive",
+      "label": "Proactive Multi-Signal (proposed)",
+      "controlIntervalS": 15,
+      "metrics": {
+        "slo": {
+          "count": 15,
+          "durationSeconds": 130
+        },
+        "cost": {
+          "avgReplicas": 24.708333333333332,
+          "nodeHours": 5.870833333333334,
+          "avgNodes": 5.870833333333334
+        },
+        "stability": {
+          "churnEvents": 92,
+          "churnPerHour": 92,
+          "oscillations": 15,
+          "oscillationsPerHour": 15,
+          "pendingUnschedulableSeconds": 75
+        },
+        "timeToScale": {
+          "events": 9,
+          "avgTimeToScaleSeconds": 21.555555555555557,
+          "p90TimeToScaleSeconds": 82
+        }
+      },
+      "forecast": {
+        "p99": {
+          "model": {
+            "n": 3555,
+            "mae": 1696.3144336812366,
+            "rmse": 8457.877041374586,
+            "mape": 1109.8350391072372,
+            "smape": 35.68743641770454,
+            "accuracyPct": 82.15628179114773,
+            "r2": -3.40042390188456
+          },
+          "holtOnly": {
+            "n": 3555,
+            "mae": 2446.4981587029997,
+            "rmse": 12139.485608670895,
+            "mape": 1825.0692633349793,
+            "smape": 43.80553829261042,
+            "accuracyPct": 78.09723085369478,
+            "r2": -8.065094792126523
+          },
+          "persistence": {
+            "n": 3555,
+            "mae": 1152.087484730184,
+            "rmse": 6065.642633175526,
+            "mape": 594.9450147314863,
+            "smape": 28.20929019108384,
+            "accuracyPct": 85.89535490445807,
+            "r2": -1.2632129516703494
+          },
+          "movingAverage": {
+            "n": 3555,
+            "mae": 1229.4473040709786,
+            "rmse": 5689.790730194368,
+            "mape": 647.9519858427097,
+            "smape": 29.755435210056934,
+            "accuracyPct": 85.12228239497153,
+            "r2": -0.9914268915310958
+          },
+          "linearDrift": {
+            "n": 3555,
+            "mae": 3624.3048713115445,
+            "rmse": 17371.865778874122,
+            "mape": 2936.3149628976453,
+            "smape": 63.8197069994137,
+            "accuracyPct": 68.09014650029314,
+            "r2": -17.563707251054716
+          }
+        },
+        "cpu": {
+          "model": {
+            "n": 3555,
+            "mae": 10.596912880432582,
+            "rmse": 20.54737380702012,
+            "mape": 61.430848480544455,
+            "smape": 35.22728940277913,
+            "accuracyPct": 82.38635529861044,
+            "r2": -0.46586759620818596
+          },
+          "holtOnly": {
+            "n": 3555,
+            "mae": 12.560245716278864,
+            "rmse": 24.89097617833921,
+            "mape": 77.67791124859913,
+            "smape": 43.501128927186,
+            "accuracyPct": 78.24943553640699,
+            "r2": -1.1511265435291231
+          },
+          "persistence": {
+            "n": 3555,
+            "mae": 10.272211966795801,
+            "rmse": 18.25346479084311,
+            "mape": 59.084048125648295,
+            "smape": 32.5743430679024,
+            "accuracyPct": 83.7128284660488,
+            "r2": -0.15683847896378467
+          },
+          "movingAverage": {
+            "n": 3555,
+            "mae": 11.47574133212803,
+            "rmse": 18.733421911649444,
+            "mape": 68.26410416915023,
+            "smape": 37.01539077015237,
+            "accuracyPct": 81.49230461492381,
+            "r2": -0.21847417677823944
+          },
+          "linearDrift": {
+            "n": 3555,
+            "mae": 20.832116738055937,
+            "rmse": 47.174359819359104,
+            "mape": 137.31670600168277,
+            "smape": 57.508807982831435,
+            "accuracyPct": 71.24559600858429,
+            "r2": -6.726701440100328
+          }
+        },
+        "ram": {
+          "model": {
+            "n": 3555,
+            "mae": 3.8274807048693766,
+            "rmse": 5.47839615908091,
+            "mape": 8.06230675929135,
+            "smape": 7.767446600577546,
+            "accuracyPct": 96.11627669971122,
+            "r2": 0.527293356048468
+          },
+          "holtOnly": {
+            "n": 3555,
+            "mae": 3.6956470946498445,
+            "rmse": 5.42120434059629,
+            "mape": 7.721416855197758,
+            "smape": 7.4813979728306474,
+            "accuracyPct": 96.25930101358468,
+            "r2": 0.5371114983848586
+          },
+          "persistence": {
+            "n": 3555,
+            "mae": 4.522245303567318,
+            "rmse": 6.331712409958065,
+            "mape": 9.668247672927924,
+            "smape": 9.246931831098944,
+            "accuracyPct": 95.37653408445053,
+            "r2": 0.36856711015004084
+          },
+          "movingAverage": {
+            "n": 3555,
+            "mae": 5.312955054190722,
+            "rmse": 7.3242668671703175,
+            "mape": 11.446019761902646,
+            "smape": 10.869571554361112,
+            "accuracyPct": 94.56521422281945,
+            "r2": 0.15508473250036658
+          },
+          "linearDrift": {
+            "n": 3555,
+            "mae": 5.2540993565857335,
+            "rmse": 9.43964100450778,
+            "mape": 11.056509924982146,
+            "smape": 10.885028183106243,
+            "accuracyPct": 94.55748590844688,
+            "r2": -0.4034462818950235
+          }
+        },
+        "pool": {
+          "model": {
+            "n": 3555,
+            "mae": 9.25537581535107,
+            "rmse": 23.357638920630066,
+            "mape": 35.958106804556515,
+            "smape": 23.819353194748697,
+            "accuracyPct": 88.09032340262566,
+            "r2": -1.9375093504268368
+          },
+          "holtOnly": {
+            "n": 3555,
+            "mae": 12.349595766129166,
+            "rmse": 32.33965361115913,
+            "mape": 50.97356827282616,
+            "smape": 29.961104971959195,
+            "accuracyPct": 85.0194475140204,
+            "r2": -4.631085278231545
+          },
+          "persistence": {
+            "n": 3555,
+            "mae": 7.630841692677884,
+            "rmse": 18.78517051674474,
+            "mape": 27.820497983693144,
+            "smape": 19.25262092478463,
+            "accuracyPct": 90.37368953760769,
+            "r2": -0.8999915078804472
+          },
+          "movingAverage": {
+            "n": 3555,
+            "mae": 8.032009520963593,
+            "rmse": 18.113759881593033,
+            "mape": 29.464156666636043,
+            "smape": 20.999710297149747,
+            "accuracyPct": 89.50014485142512,
+            "r2": -0.7666014779006738
+          },
+          "linearDrift": {
+            "n": 3555,
+            "mae": 18.586440352484736,
+            "rmse": 46.66185201090402,
+            "mape": 81.44208011776325,
+            "smape": 40.68148700999395,
+            "accuracyPct": 79.65925649500302,
+            "r2": -10.723176958261215
+          }
+        }
+      },
+      "classification": {
+        "model": {
+          "tp": 8,
+          "fp": 114,
+          "fn": 106,
+          "tn": 3327,
+          "precision": 0.06557377049180328,
+          "recall": 0.07017543859649122,
+          "f1": 0.06779661016949151,
+          "accuracy": 0.9381153305203939
+        },
+        "persistence": {
+          "tp": 5,
+          "fp": 125,
+          "fn": 109,
+          "tn": 3316,
+          "precision": 0.038461538461538464,
+          "recall": 0.043859649122807015,
+          "f1": 0.04098360655737705,
+          "accuracy": 0.9341772151898734
+        }
+      },
+      "classificationWindowed": {
+        "model": {
+          "tp": 98,
+          "fp": 24,
+          "fn": 380,
+          "tn": 3098,
+          "precision": 0.8032786885245902,
+          "recall": 0.20502092050209206,
+          "f1": 0.32666666666666666,
+          "accuracy": 0.8877777777777778
+        },
+        "persistence": {
+          "tp": 122,
+          "fp": 8,
+          "fn": 356,
+          "tn": 3069,
+          "precision": 0.9384615384615385,
+          "recall": 0.25523012552301255,
+          "f1": 0.40131578947368424,
+          "accuracy": 0.8976090014064697
+        }
+      },
+      "thresholdSweep": {
+        "bestF1": {
+          "threshold": 155.85781622815517,
+          "precision": 0.3988355167394469,
+          "recall": 0.5732217573221757,
+          "f1": 0.4703862660944206
+        },
+        "prAuc": 0.4978063484105987,
+        "nThresholds": 3600
+      }
+    }
+  ],
+  "multiSeedRuns": [
+    {
+      "pattern": "bursty",
+      "seed": 42,
+      "controller": "default_hpa",
+      "label": "Default HPA",
+      "slo": {
+        "count": 73,
+        "durationSeconds": 539
+      },
+      "cost": {
+        "avgReplicas": 15.983333333333333,
+        "nodeHours": 2.5125,
+        "avgNodes": 2.5125
+      },
+      "timeToScale": 266.6666666666667,
+      "churnPerHour": 29
+    },
+    {
+      "pattern": "bursty",
+      "seed": 42,
+      "controller": "tuned_hpa",
+      "label": "Tuned HPA",
+      "slo": {
+        "count": 12,
+        "durationSeconds": 196
+      },
+      "cost": {
+        "avgReplicas": 31.7625,
+        "nodeHours": 5.870833333333334,
+        "avgNodes": 5.870833333333334
+      },
+      "timeToScale": 23.88888888888889,
+      "churnPerHour": 78
+    },
+    {
+      "pattern": "bursty",
+      "seed": 42,
+      "controller": "hpa_vpa",
+      "label": "HPA + VPA (reactive multi-metric)",
+      "slo": {
+        "count": 12,
+        "durationSeconds": 146
+      },
+      "cost": {
+        "avgReplicas": 36.17916666666667,
+        "nodeHours": 5.870833333333334,
+        "avgNodes": 5.870833333333334
+      },
+      "timeToScale": 22.22222222222222,
+      "churnPerHour": 111
+    },
+    {
+      "pattern": "bursty",
+      "seed": 42,
+      "controller": "reactive_multi_signal",
+      "label": "Reactive Multi-Signal (same signals, no forecast)",
+      "slo": {
+        "count": 12,
+        "durationSeconds": 146
+      },
+      "cost": {
+        "avgReplicas": 36.17916666666667,
+        "nodeHours": 5.870833333333334,
+        "avgNodes": 5.870833333333334
+      },
+      "timeToScale": 22.22222222222222,
+      "churnPerHour": 111
+    },
+    {
+      "pattern": "bursty",
+      "seed": 42,
+      "controller": "proactive",
+      "label": "Proactive Multi-Signal (proposed)",
+      "slo": {
+        "count": 10,
+        "durationSeconds": 134
+      },
+      "cost": {
+        "avgReplicas": 36.329166666666666,
+        "nodeHours": 5.845833333333333,
+        "avgNodes": 5.845833333333333
+      },
+      "timeToScale": 20.555555555555557,
+      "churnPerHour": 103
+    },
+    {
+      "pattern": "queue_driven",
+      "seed": 42,
+      "controller": "default_hpa",
+      "label": "Default HPA",
+      "slo": {
+        "count": 326,
+        "durationSeconds": 938
+      },
+      "cost": {
+        "avgReplicas": 13.816666666666666,
+        "nodeHours": 2.5791666666666666,
+        "avgNodes": 2.5791666666666666
+      },
+      "timeToScale": 52,
+      "churnPerHour": 37
+    },
+    {
+      "pattern": "queue_driven",
+      "seed": 42,
+      "controller": "tuned_hpa",
+      "label": "Tuned HPA",
+      "slo": {
+        "count": 26,
+        "durationSeconds": 179
+      },
+      "cost": {
+        "avgReplicas": 19.254166666666666,
+        "nodeHours": 4.995833333333334,
+        "avgNodes": 4.995833333333334
+      },
+      "timeToScale": 35.6,
+      "churnPerHour": 68
+    },
+    {
+      "pattern": "queue_driven",
+      "seed": 42,
+      "controller": "hpa_vpa",
+      "label": "HPA + VPA (reactive multi-metric)",
+      "slo": {
+        "count": 22,
+        "durationSeconds": 161
+      },
+      "cost": {
+        "avgReplicas": 20.783333333333335,
+        "nodeHours": 4.995833333333334,
+        "avgNodes": 4.995833333333334
+      },
+      "timeToScale": 35.6,
+      "churnPerHour": 86
+    },
+    {
+      "pattern": "queue_driven",
+      "seed": 42,
+      "controller": "reactive_multi_signal",
+      "label": "Reactive Multi-Signal (same signals, no forecast)",
+      "slo": {
+        "count": 22,
+        "durationSeconds": 161
+      },
+      "cost": {
+        "avgReplicas": 20.783333333333335,
+        "nodeHours": 4.995833333333334,
+        "avgNodes": 4.995833333333334
+      },
+      "timeToScale": 35.6,
+      "churnPerHour": 86
+    },
+    {
+      "pattern": "queue_driven",
+      "seed": 42,
+      "controller": "proactive",
+      "label": "Proactive Multi-Signal (proposed)",
+      "slo": {
+        "count": 18,
+        "durationSeconds": 156
+      },
+      "cost": {
+        "avgReplicas": 19.720833333333335,
+        "nodeHours": 4.995833333333334,
+        "avgNodes": 4.995833333333334
+      },
+      "timeToScale": 35.6,
+      "churnPerHour": 81
+    },
+    {
+      "pattern": "mixed",
+      "seed": 42,
+      "controller": "default_hpa",
+      "label": "Default HPA",
+      "slo": {
+        "count": 55,
+        "durationSeconds": 345
+      },
+      "cost": {
+        "avgReplicas": 11.358333333333333,
+        "nodeHours": 1.6875,
+        "avgNodes": 1.6875
+      },
+      "timeToScale": 233.33333333333334,
+      "churnPerHour": 29
+    },
+    {
+      "pattern": "mixed",
+      "seed": 42,
+      "controller": "tuned_hpa",
+      "label": "Tuned HPA",
+      "slo": {
+        "count": 14,
+        "durationSeconds": 139
+      },
+      "cost": {
+        "avgReplicas": 21.945833333333333,
+        "nodeHours": 5.870833333333334,
+        "avgNodes": 5.870833333333334
+      },
+      "timeToScale": 19.88888888888889,
+      "churnPerHour": 70
+    },
+    {
+      "pattern": "mixed",
+      "seed": 42,
+      "controller": "hpa_vpa",
+      "label": "HPA + VPA (reactive multi-metric)",
+      "slo": {
+        "count": 10,
+        "durationSeconds": 119
+      },
+      "cost": {
+        "avgReplicas": 27.883333333333333,
+        "nodeHours": 5.870833333333334,
+        "avgNodes": 5.870833333333334
+      },
+      "timeToScale": 19.88888888888889,
+      "churnPerHour": 102
+    },
+    {
+      "pattern": "mixed",
+      "seed": 42,
+      "controller": "reactive_multi_signal",
+      "label": "Reactive Multi-Signal (same signals, no forecast)",
+      "slo": {
+        "count": 10,
+        "durationSeconds": 119
+      },
+      "cost": {
+        "avgReplicas": 27.883333333333333,
+        "nodeHours": 5.870833333333334,
+        "avgNodes": 5.870833333333334
+      },
+      "timeToScale": 19.88888888888889,
+      "churnPerHour": 102
+    },
+    {
+      "pattern": "mixed",
+      "seed": 42,
+      "controller": "proactive",
+      "label": "Proactive Multi-Signal (proposed)",
+      "slo": {
+        "count": 15,
+        "durationSeconds": 130
+      },
+      "cost": {
+        "avgReplicas": 24.708333333333332,
+        "nodeHours": 5.870833333333334,
+        "avgNodes": 5.870833333333334
+      },
+      "timeToScale": 21.555555555555557,
+      "churnPerHour": 92
+    },
+    {
+      "pattern": "bursty",
+      "seed": 7,
+      "controller": "default_hpa",
+      "label": "Default HPA",
+      "slo": {
+        "count": 81,
+        "durationSeconds": 501
+      },
+      "cost": {
+        "avgReplicas": 15.433333333333334,
+        "nodeHours": 2.2416666666666667,
+        "avgNodes": 2.2416666666666667
+      },
+      "timeToScale": 300,
+      "churnPerHour": 30
+    },
+    {
+      "pattern": "bursty",
+      "seed": 7,
+      "controller": "tuned_hpa",
+      "label": "Tuned HPA",
+      "slo": {
+        "count": 14,
+        "durationSeconds": 173
+      },
+      "cost": {
+        "avgReplicas": 32.69166666666667,
+        "nodeHours": 5.870833333333334,
+        "avgNodes": 5.870833333333334
+      },
+      "timeToScale": 27.77777777777778,
+      "churnPerHour": 83
+    },
+    {
+      "pattern": "bursty",
+      "seed": 7,
+      "controller": "hpa_vpa",
+      "label": "HPA + VPA (reactive multi-metric)",
+      "slo": {
+        "count": 10,
+        "durationSeconds": 118
+      },
+      "cost": {
+        "avgReplicas": 37.93333333333333,
+        "nodeHours": 5.870833333333334,
+        "avgNodes": 5.870833333333334
+      },
+      "timeToScale": 19.444444444444443,
+      "churnPerHour": 115
+    },
+    {
+      "pattern": "bursty",
+      "seed": 7,
+      "controller": "reactive_multi_signal",
+      "label": "Reactive Multi-Signal (same signals, no forecast)",
+      "slo": {
+        "count": 10,
+        "durationSeconds": 118
+      },
+      "cost": {
+        "avgReplicas": 37.93333333333333,
+        "nodeHours": 5.870833333333334,
+        "avgNodes": 5.870833333333334
+      },
+      "timeToScale": 19.444444444444443,
+      "churnPerHour": 115
+    },
+    {
+      "pattern": "bursty",
+      "seed": 7,
+      "controller": "proactive",
+      "label": "Proactive Multi-Signal (proposed)",
+      "slo": {
+        "count": 10,
+        "durationSeconds": 108
+      },
+      "cost": {
+        "avgReplicas": 37.3625,
+        "nodeHours": 5.829166666666667,
+        "avgNodes": 5.829166666666667
+      },
+      "timeToScale": 17.77777777777778,
+      "churnPerHour": 111
+    },
+    {
+      "pattern": "queue_driven",
+      "seed": 7,
+      "controller": "default_hpa",
+      "label": "Default HPA",
+      "slo": {
+        "count": 299,
+        "durationSeconds": 867
+      },
+      "cost": {
+        "avgReplicas": 14.9,
+        "nodeHours": 2.091666666666667,
+        "avgNodes": 2.091666666666667
+      },
+      "timeToScale": 49.666666666666664,
+      "churnPerHour": 31
+    },
+    {
+      "pattern": "queue_driven",
+      "seed": 7,
+      "controller": "tuned_hpa",
+      "label": "Tuned HPA",
+      "slo": {
+        "count": 29,
+        "durationSeconds": 138
+      },
+      "cost": {
+        "avgReplicas": 19.3875,
+        "nodeHours": 5.016666666666667,
+        "avgNodes": 5.016666666666667
+      },
+      "timeToScale": 38,
+      "churnPerHour": 70
+    },
+    {
+      "pattern": "queue_driven",
+      "seed": 7,
+      "controller": "hpa_vpa",
+      "label": "HPA + VPA (reactive multi-metric)",
+      "slo": {
+        "count": 20,
+        "durationSeconds": 115
+      },
+      "cost": {
+        "avgReplicas": 23.275,
+        "nodeHours": 5.016666666666667,
+        "avgNodes": 5.016666666666667
+      },
+      "timeToScale": 27.166666666666668,
+      "churnPerHour": 94
+    },
+    {
+      "pattern": "queue_driven",
+      "seed": 7,
+      "controller": "reactive_multi_signal",
+      "label": "Reactive Multi-Signal (same signals, no forecast)",
+      "slo": {
+        "count": 20,
+        "durationSeconds": 115
+      },
+      "cost": {
+        "avgReplicas": 23.275,
+        "nodeHours": 5.016666666666667,
+        "avgNodes": 5.016666666666667
+      },
+      "timeToScale": 27.166666666666668,
+      "churnPerHour": 94
+    },
+    {
+      "pattern": "queue_driven",
+      "seed": 7,
+      "controller": "proactive",
+      "label": "Proactive Multi-Signal (proposed)",
+      "slo": {
+        "count": 15,
+        "durationSeconds": 91
+      },
+      "cost": {
+        "avgReplicas": 21.154166666666665,
+        "nodeHours": 5.016666666666667,
+        "avgNodes": 5.016666666666667
+      },
+      "timeToScale": 27.166666666666668,
+      "churnPerHour": 79
+    },
+    {
+      "pattern": "mixed",
+      "seed": 7,
+      "controller": "default_hpa",
+      "label": "Default HPA",
+      "slo": {
+        "count": 64,
+        "durationSeconds": 372
+      },
+      "cost": {
+        "avgReplicas": 10.991666666666667,
+        "nodeHours": 1.7666666666666666,
+        "avgNodes": 1.7666666666666666
+      },
+      "timeToScale": 262.5,
+      "churnPerHour": 29
+    },
+    {
+      "pattern": "mixed",
+      "seed": 7,
+      "controller": "tuned_hpa",
+      "label": "Tuned HPA",
+      "slo": {
+        "count": 9,
+        "durationSeconds": 124
+      },
+      "cost": {
+        "avgReplicas": 25.520833333333332,
+        "nodeHours": 5.870833333333334,
+        "avgNodes": 5.870833333333334
+      },
+      "timeToScale": 18.625,
+      "churnPerHour": 80
+    },
+    {
+      "pattern": "mixed",
+      "seed": 7,
+      "controller": "hpa_vpa",
+      "label": "HPA + VPA (reactive multi-metric)",
+      "slo": {
+        "count": 9,
+        "durationSeconds": 113
+      },
+      "cost": {
+        "avgReplicas": 25.945833333333333,
+        "nodeHours": 5.870833333333334,
+        "avgNodes": 5.870833333333334
+      },
+      "timeToScale": 17.5,
+      "churnPerHour": 96
+    },
+    {
+      "pattern": "mixed",
+      "seed": 7,
+      "controller": "reactive_multi_signal",
+      "label": "Reactive Multi-Signal (same signals, no forecast)",
+      "slo": {
+        "count": 9,
+        "durationSeconds": 113
+      },
+      "cost": {
+        "avgReplicas": 25.945833333333333,
+        "nodeHours": 5.870833333333334,
+        "avgNodes": 5.870833333333334
+      },
+      "timeToScale": 17.5,
+      "churnPerHour": 96
+    },
+    {
+      "pattern": "mixed",
+      "seed": 7,
+      "controller": "proactive",
+      "label": "Proactive Multi-Signal (proposed)",
+      "slo": {
+        "count": 8,
+        "durationSeconds": 109
+      },
+      "cost": {
+        "avgReplicas": 24.241666666666667,
+        "nodeHours": 5.7875,
+        "avgNodes": 5.7875
+      },
+      "timeToScale": 19.375,
+      "churnPerHour": 84
+    },
+    {
+      "pattern": "bursty",
+      "seed": 13,
+      "controller": "default_hpa",
+      "label": "Default HPA",
+      "slo": {
+        "count": 61,
+        "durationSeconds": 416
+      },
+      "cost": {
+        "avgReplicas": 17.795833333333334,
+        "nodeHours": 2.879166666666667,
+        "avgNodes": 2.879166666666667
+      },
+      "timeToScale": 276,
+      "churnPerHour": 28
+    },
+    {
+      "pattern": "bursty",
+      "seed": 13,
+      "controller": "tuned_hpa",
+      "label": "Tuned HPA",
+      "slo": {
+        "count": 13,
+        "durationSeconds": 211
+      },
+      "cost": {
+        "avgReplicas": 29.733333333333334,
+        "nodeHours": 5.7875,
+        "avgNodes": 5.7875
+      },
+      "timeToScale": 22.3,
+      "churnPerHour": 81
+    },
+    {
+      "pattern": "bursty",
+      "seed": 13,
+      "controller": "hpa_vpa",
+      "label": "HPA + VPA (reactive multi-metric)",
+      "slo": {
+        "count": 13,
+        "durationSeconds": 150
+      },
+      "cost": {
+        "avgReplicas": 34.208333333333336,
+        "nodeHours": 5.7875,
+        "avgNodes": 5.7875
+      },
+      "timeToScale": 19.3,
+      "churnPerHour": 111
+    },
+    {
+      "pattern": "bursty",
+      "seed": 13,
+      "controller": "reactive_multi_signal",
+      "label": "Reactive Multi-Signal (same signals, no forecast)",
+      "slo": {
+        "count": 13,
+        "durationSeconds": 150
+      },
+      "cost": {
+        "avgReplicas": 34.208333333333336,
+        "nodeHours": 5.7875,
+        "avgNodes": 5.7875
+      },
+      "timeToScale": 19.3,
+      "churnPerHour": 111
+    },
+    {
+      "pattern": "bursty",
+      "seed": 13,
+      "controller": "proactive",
+      "label": "Proactive Multi-Signal (proposed)",
+      "slo": {
+        "count": 11,
+        "durationSeconds": 144
+      },
+      "cost": {
+        "avgReplicas": 32.9375,
+        "nodeHours": 5.841666666666667,
+        "avgNodes": 5.841666666666667
+      },
+      "timeToScale": 16.3,
+      "churnPerHour": 98
+    },
+    {
+      "pattern": "queue_driven",
+      "seed": 13,
+      "controller": "default_hpa",
+      "label": "Default HPA",
+      "slo": {
+        "count": 266,
+        "durationSeconds": 771
+      },
+      "cost": {
+        "avgReplicas": 15.191666666666666,
+        "nodeHours": 2.5375,
+        "avgNodes": 2.5375
+      },
+      "timeToScale": 50,
+      "churnPerHour": 34
+    },
+    {
+      "pattern": "queue_driven",
+      "seed": 13,
+      "controller": "tuned_hpa",
+      "label": "Tuned HPA",
+      "slo": {
+        "count": 22,
+        "durationSeconds": 119
+      },
+      "cost": {
+        "avgReplicas": 19.416666666666668,
+        "nodeHours": 4.945833333333334,
+        "avgNodes": 4.945833333333334
+      },
+      "timeToScale": 35.2,
+      "churnPerHour": 65
+    },
+    {
+      "pattern": "queue_driven",
+      "seed": 13,
+      "controller": "hpa_vpa",
+      "label": "HPA + VPA (reactive multi-metric)",
+      "slo": {
+        "count": 21,
+        "durationSeconds": 118
+      },
+      "cost": {
+        "avgReplicas": 21.195833333333333,
+        "nodeHours": 4.945833333333334,
+        "avgNodes": 4.945833333333334
+      },
+      "timeToScale": 32.2,
+      "churnPerHour": 83
+    },
+    {
+      "pattern": "queue_driven",
+      "seed": 13,
+      "controller": "reactive_multi_signal",
+      "label": "Reactive Multi-Signal (same signals, no forecast)",
+      "slo": {
+        "count": 21,
+        "durationSeconds": 118
+      },
+      "cost": {
+        "avgReplicas": 21.195833333333333,
+        "nodeHours": 4.945833333333334,
+        "avgNodes": 4.945833333333334
+      },
+      "timeToScale": 32.2,
+      "churnPerHour": 83
+    },
+    {
+      "pattern": "queue_driven",
+      "seed": 13,
+      "controller": "proactive",
+      "label": "Proactive Multi-Signal (proposed)",
+      "slo": {
+        "count": 12,
+        "durationSeconds": 80
+      },
+      "cost": {
+        "avgReplicas": 18.904166666666665,
+        "nodeHours": 4.945833333333334,
+        "avgNodes": 4.945833333333334
+      },
+      "timeToScale": 32.2,
+      "churnPerHour": 74
+    },
+    {
+      "pattern": "mixed",
+      "seed": 13,
+      "controller": "default_hpa",
+      "label": "Default HPA",
+      "slo": {
+        "count": 112,
+        "durationSeconds": 335
+      },
+      "cost": {
+        "avgReplicas": 10.545833333333333,
+        "nodeHours": 1.6416666666666666,
+        "avgNodes": 1.6416666666666666
+      },
+      "timeToScale": 200,
+      "churnPerHour": 21
+    },
+    {
+      "pattern": "mixed",
+      "seed": 13,
+      "controller": "tuned_hpa",
+      "label": "Tuned HPA",
+      "slo": {
+        "count": 9,
+        "durationSeconds": 109
+      },
+      "cost": {
+        "avgReplicas": 23.416666666666668,
+        "nodeHours": 5.870833333333334,
+        "avgNodes": 5.870833333333334
+      },
+      "timeToScale": 45.22222222222222,
+      "churnPerHour": 64
+    },
+    {
+      "pattern": "mixed",
+      "seed": 13,
+      "controller": "hpa_vpa",
+      "label": "HPA + VPA (reactive multi-metric)",
+      "slo": {
+        "count": 11,
+        "durationSeconds": 102
+      },
+      "cost": {
+        "avgReplicas": 25.0875,
+        "nodeHours": 5.870833333333334,
+        "avgNodes": 5.870833333333334
+      },
+      "timeToScale": 45.22222222222222,
+      "churnPerHour": 90
+    },
+    {
+      "pattern": "mixed",
+      "seed": 13,
+      "controller": "reactive_multi_signal",
+      "label": "Reactive Multi-Signal (same signals, no forecast)",
+      "slo": {
+        "count": 11,
+        "durationSeconds": 102
+      },
+      "cost": {
+        "avgReplicas": 25.0875,
+        "nodeHours": 5.870833333333334,
+        "avgNodes": 5.870833333333334
+      },
+      "timeToScale": 45.22222222222222,
+      "churnPerHour": 90
+    },
+    {
+      "pattern": "mixed",
+      "seed": 13,
+      "controller": "proactive",
+      "label": "Proactive Multi-Signal (proposed)",
+      "slo": {
+        "count": 11,
+        "durationSeconds": 100
+      },
+      "cost": {
+        "avgReplicas": 24.704166666666666,
+        "nodeHours": 5.829166666666667,
+        "avgNodes": 5.829166666666667
+      },
+      "timeToScale": 13.444444444444445,
+      "churnPerHour": 82
+    },
+    {
+      "pattern": "bursty",
+      "seed": 19,
+      "controller": "default_hpa",
+      "label": "Default HPA",
+      "slo": {
+        "count": 100,
+        "durationSeconds": 595
+      },
+      "cost": {
+        "avgReplicas": 15.579166666666667,
+        "nodeHours": 2.2416666666666667,
+        "avgNodes": 2.2416666666666667
+      },
+      "timeToScale": 300,
+      "churnPerHour": 34
+    },
+    {
+      "pattern": "bursty",
+      "seed": 19,
+      "controller": "tuned_hpa",
+      "label": "Tuned HPA",
+      "slo": {
+        "count": 13,
+        "durationSeconds": 183
+      },
+      "cost": {
+        "avgReplicas": 31.2875,
+        "nodeHours": 5.766666666666667,
+        "avgNodes": 5.766666666666667
+      },
+      "timeToScale": 18,
+      "churnPerHour": 79
+    },
+    {
+      "pattern": "bursty",
+      "seed": 19,
+      "controller": "hpa_vpa",
+      "label": "HPA + VPA (reactive multi-metric)",
+      "slo": {
+        "count": 15,
+        "durationSeconds": 158
+      },
+      "cost": {
+        "avgReplicas": 31.3625,
+        "nodeHours": 5.766666666666667,
+        "avgNodes": 5.766666666666667
+      },
+      "timeToScale": 22,
+      "churnPerHour": 111
+    },
+    {
+      "pattern": "bursty",
+      "seed": 19,
+      "controller": "reactive_multi_signal",
+      "label": "Reactive Multi-Signal (same signals, no forecast)",
+      "slo": {
+        "count": 15,
+        "durationSeconds": 158
+      },
+      "cost": {
+        "avgReplicas": 31.3625,
+        "nodeHours": 5.766666666666667,
+        "avgNodes": 5.766666666666667
+      },
+      "timeToScale": 22,
+      "churnPerHour": 111
+    },
+    {
+      "pattern": "bursty",
+      "seed": 19,
+      "controller": "proactive",
+      "label": "Proactive Multi-Signal (proposed)",
+      "slo": {
+        "count": 13,
+        "durationSeconds": 129
+      },
+      "cost": {
+        "avgReplicas": 35.00833333333333,
+        "nodeHours": 5.841666666666667,
+        "avgNodes": 5.841666666666667
+      },
+      "timeToScale": 18.666666666666668,
+      "churnPerHour": 106
+    },
+    {
+      "pattern": "queue_driven",
+      "seed": 19,
+      "controller": "default_hpa",
+      "label": "Default HPA",
+      "slo": {
+        "count": 274,
+        "durationSeconds": 851
+      },
+      "cost": {
+        "avgReplicas": 14.154166666666667,
+        "nodeHours": 2.4166666666666665,
+        "avgNodes": 2.4166666666666665
+      },
+      "timeToScale": 52.6,
+      "churnPerHour": 31
+    },
+    {
+      "pattern": "queue_driven",
+      "seed": 19,
+      "controller": "tuned_hpa",
+      "label": "Tuned HPA",
+      "slo": {
+        "count": 25,
+        "durationSeconds": 119
+      },
+      "cost": {
+        "avgReplicas": 17.804166666666667,
+        "nodeHours": 4.954166666666667,
+        "avgNodes": 4.954166666666667
+      },
+      "timeToScale": 28.6,
+      "churnPerHour": 65
+    },
+    {
+      "pattern": "queue_driven",
+      "seed": 19,
+      "controller": "hpa_vpa",
+      "label": "HPA + VPA (reactive multi-metric)",
+      "slo": {
+        "count": 21,
+        "durationSeconds": 102
+      },
+      "cost": {
+        "avgReplicas": 20.408333333333335,
+        "nodeHours": 4.954166666666667,
+        "avgNodes": 4.954166666666667
+      },
+      "timeToScale": 31.6,
+      "churnPerHour": 87
+    },
+    {
+      "pattern": "queue_driven",
+      "seed": 19,
+      "controller": "reactive_multi_signal",
+      "label": "Reactive Multi-Signal (same signals, no forecast)",
+      "slo": {
+        "count": 21,
+        "durationSeconds": 102
+      },
+      "cost": {
+        "avgReplicas": 20.408333333333335,
+        "nodeHours": 4.954166666666667,
+        "avgNodes": 4.954166666666667
+      },
+      "timeToScale": 31.6,
+      "churnPerHour": 87
+    },
+    {
+      "pattern": "queue_driven",
+      "seed": 19,
+      "controller": "proactive",
+      "label": "Proactive Multi-Signal (proposed)",
+      "slo": {
+        "count": 25,
+        "durationSeconds": 101
+      },
+      "cost": {
+        "avgReplicas": 20.783333333333335,
+        "nodeHours": 4.966666666666667,
+        "avgNodes": 4.966666666666667
+      },
+      "timeToScale": 31.6,
+      "churnPerHour": 97
+    },
+    {
+      "pattern": "mixed",
+      "seed": 19,
+      "controller": "default_hpa",
+      "label": "Default HPA",
+      "slo": {
+        "count": 120,
+        "durationSeconds": 368
+      },
+      "cost": {
+        "avgReplicas": 10.766666666666667,
+        "nodeHours": 1.8083333333333333,
+        "avgNodes": 1.8083333333333333
+      },
+      "timeToScale": 262.5,
+      "churnPerHour": 26
+    },
+    {
+      "pattern": "mixed",
+      "seed": 19,
+      "controller": "tuned_hpa",
+      "label": "Tuned HPA",
+      "slo": {
+        "count": 10,
+        "durationSeconds": 116
+      },
+      "cost": {
+        "avgReplicas": 25.820833333333333,
+        "nodeHours": 5.85,
+        "avgNodes": 5.85
+      },
+      "timeToScale": 14.25,
+      "churnPerHour": 71
+    },
+    {
+      "pattern": "mixed",
+      "seed": 19,
+      "controller": "hpa_vpa",
+      "label": "HPA + VPA (reactive multi-metric)",
+      "slo": {
+        "count": 14,
+        "durationSeconds": 91
+      },
+      "cost": {
+        "avgReplicas": 24.7,
+        "nodeHours": 5.85,
+        "avgNodes": 5.85
+      },
+      "timeToScale": 48.25,
+      "churnPerHour": 88
+    },
+    {
+      "pattern": "mixed",
+      "seed": 19,
+      "controller": "reactive_multi_signal",
+      "label": "Reactive Multi-Signal (same signals, no forecast)",
+      "slo": {
+        "count": 14,
+        "durationSeconds": 91
+      },
+      "cost": {
+        "avgReplicas": 24.7,
+        "nodeHours": 5.85,
+        "avgNodes": 5.85
+      },
+      "timeToScale": 48.25,
+      "churnPerHour": 88
+    },
+    {
+      "pattern": "mixed",
+      "seed": 19,
+      "controller": "proactive",
+      "label": "Proactive Multi-Signal (proposed)",
+      "slo": {
+        "count": 9,
+        "durationSeconds": 92
+      },
+      "cost": {
+        "avgReplicas": 24.05,
+        "nodeHours": 5.841666666666667,
+        "avgNodes": 5.841666666666667
+      },
+      "timeToScale": 10.5,
+      "churnPerHour": 81
+    },
+    {
+      "pattern": "bursty",
+      "seed": 23,
+      "controller": "default_hpa",
+      "label": "Default HPA",
+      "slo": {
+        "count": 52,
+        "durationSeconds": 423
+      },
+      "cost": {
+        "avgReplicas": 20.708333333333332,
+        "nodeHours": 3.1125,
+        "avgNodes": 3.1125
+      },
+      "timeToScale": 211.5,
+      "churnPerHour": 30
+    },
+    {
+      "pattern": "bursty",
+      "seed": 23,
+      "controller": "tuned_hpa",
+      "label": "Tuned HPA",
+      "slo": {
+        "count": 15,
+        "durationSeconds": 177
+      },
+      "cost": {
+        "avgReplicas": 34.19583333333333,
+        "nodeHours": 5.829166666666667,
+        "avgNodes": 5.829166666666667
+      },
+      "timeToScale": 24.4,
+      "churnPerHour": 86
+    },
+    {
+      "pattern": "bursty",
+      "seed": 23,
+      "controller": "hpa_vpa",
+      "label": "HPA + VPA (reactive multi-metric)",
+      "slo": {
+        "count": 13,
+        "durationSeconds": 122
+      },
+      "cost": {
+        "avgReplicas": 38.9,
+        "nodeHours": 5.829166666666667,
+        "avgNodes": 5.829166666666667
+      },
+      "timeToScale": 13.9,
+      "churnPerHour": 116
+    },
+    {
+      "pattern": "bursty",
+      "seed": 23,
+      "controller": "reactive_multi_signal",
+      "label": "Reactive Multi-Signal (same signals, no forecast)",
+      "slo": {
+        "count": 13,
+        "durationSeconds": 122
+      },
+      "cost": {
+        "avgReplicas": 38.9,
+        "nodeHours": 5.829166666666667,
+        "avgNodes": 5.829166666666667
+      },
+      "timeToScale": 13.9,
+      "churnPerHour": 116
+    },
+    {
+      "pattern": "bursty",
+      "seed": 23,
+      "controller": "proactive",
+      "label": "Proactive Multi-Signal (proposed)",
+      "slo": {
+        "count": 11,
+        "durationSeconds": 122
+      },
+      "cost": {
+        "avgReplicas": 37.0375,
+        "nodeHours": 5.841666666666667,
+        "avgNodes": 5.841666666666667
+      },
+      "timeToScale": 13.9,
+      "churnPerHour": 102
+    },
+    {
+      "pattern": "queue_driven",
+      "seed": 23,
+      "controller": "default_hpa",
+      "label": "Default HPA",
+      "slo": {
+        "count": 267,
+        "durationSeconds": 939
+      },
+      "cost": {
+        "avgReplicas": 13.95,
+        "nodeHours": 2.0875,
+        "avgNodes": 2.0875
+      },
+      "timeToScale": 65.6,
+      "churnPerHour": 40
+    },
+    {
+      "pattern": "queue_driven",
+      "seed": 23,
+      "controller": "tuned_hpa",
+      "label": "Tuned HPA",
+      "slo": {
+        "count": 21,
+        "durationSeconds": 162
+      },
+      "cost": {
+        "avgReplicas": 20.704166666666666,
+        "nodeHours": 5.0375,
+        "avgNodes": 5.0375
+      },
+      "timeToScale": 35.6,
+      "churnPerHour": 74
+    },
+    {
+      "pattern": "queue_driven",
+      "seed": 23,
+      "controller": "hpa_vpa",
+      "label": "HPA + VPA (reactive multi-metric)",
+      "slo": {
+        "count": 26,
+        "durationSeconds": 135
+      },
+      "cost": {
+        "avgReplicas": 22.304166666666667,
+        "nodeHours": 5.0375,
+        "avgNodes": 5.0375
+      },
+      "timeToScale": 32.6,
+      "churnPerHour": 100
+    },
+    {
+      "pattern": "queue_driven",
+      "seed": 23,
+      "controller": "reactive_multi_signal",
+      "label": "Reactive Multi-Signal (same signals, no forecast)",
+      "slo": {
+        "count": 26,
+        "durationSeconds": 135
+      },
+      "cost": {
+        "avgReplicas": 22.304166666666667,
+        "nodeHours": 5.0375,
+        "avgNodes": 5.0375
+      },
+      "timeToScale": 32.6,
+      "churnPerHour": 100
+    },
+    {
+      "pattern": "queue_driven",
+      "seed": 23,
+      "controller": "proactive",
+      "label": "Proactive Multi-Signal (proposed)",
+      "slo": {
+        "count": 19,
+        "durationSeconds": 110
+      },
+      "cost": {
+        "avgReplicas": 20.1375,
+        "nodeHours": 5.0375,
+        "avgNodes": 5.0375
+      },
+      "timeToScale": 29.6,
+      "churnPerHour": 91
+    },
+    {
+      "pattern": "mixed",
+      "seed": 23,
+      "controller": "default_hpa",
+      "label": "Default HPA",
+      "slo": {
+        "count": 65,
+        "durationSeconds": 288
+      },
+      "cost": {
+        "avgReplicas": 10.354166666666666,
+        "nodeHours": 1.5666666666666667,
+        "avgNodes": 1.5666666666666667
+      },
+      "timeToScale": 218.1818181818182,
+      "churnPerHour": 22
+    },
+    {
+      "pattern": "mixed",
+      "seed": 23,
+      "controller": "tuned_hpa",
+      "label": "Tuned HPA",
+      "slo": {
+        "count": 12,
+        "durationSeconds": 110
+      },
+      "cost": {
+        "avgReplicas": 27.058333333333334,
+        "nodeHours": 5.85,
+        "avgNodes": 5.85
+      },
+      "timeToScale": 18.181818181818183,
+      "churnPerHour": 73
+    },
+    {
+      "pattern": "mixed",
+      "seed": 23,
+      "controller": "hpa_vpa",
+      "label": "HPA + VPA (reactive multi-metric)",
+      "slo": {
+        "count": 8,
+        "durationSeconds": 89
+      },
+      "cost": {
+        "avgReplicas": 26.333333333333332,
+        "nodeHours": 5.85,
+        "avgNodes": 5.85
+      },
+      "timeToScale": 20.90909090909091,
+      "churnPerHour": 86
+    },
+    {
+      "pattern": "mixed",
+      "seed": 23,
+      "controller": "reactive_multi_signal",
+      "label": "Reactive Multi-Signal (same signals, no forecast)",
+      "slo": {
+        "count": 8,
+        "durationSeconds": 89
+      },
+      "cost": {
+        "avgReplicas": 26.333333333333332,
+        "nodeHours": 5.85,
+        "avgNodes": 5.85
+      },
+      "timeToScale": 20.90909090909091,
+      "churnPerHour": 86
+    },
+    {
+      "pattern": "mixed",
+      "seed": 23,
+      "controller": "proactive",
+      "label": "Proactive Multi-Signal (proposed)",
+      "slo": {
+        "count": 8,
+        "durationSeconds": 81
+      },
+      "cost": {
+        "avgReplicas": 26.5125,
+        "nodeHours": 5.841666666666667,
+        "avgNodes": 5.841666666666667
+      },
+      "timeToScale": 16.818181818181817,
+      "churnPerHour": 81
+    },
+    {
+      "pattern": "bursty",
+      "seed": 31,
+      "controller": "default_hpa",
+      "label": "Default HPA",
+      "slo": {
+        "count": 67,
+        "durationSeconds": 671
+      },
+      "cost": {
+        "avgReplicas": 16.829166666666666,
+        "nodeHours": 2.5541666666666667,
+        "avgNodes": 2.5541666666666667
+      },
+      "timeToScale": 300,
+      "churnPerHour": 38
+    },
+    {
+      "pattern": "bursty",
+      "seed": 31,
+      "controller": "tuned_hpa",
+      "label": "Tuned HPA",
+      "slo": {
+        "count": 13,
+        "durationSeconds": 224
+      },
+      "cost": {
+        "avgReplicas": 31.495833333333334,
+        "nodeHours": 5.870833333333334,
+        "avgNodes": 5.870833333333334
+      },
+      "timeToScale": 27.555555555555557,
+      "churnPerHour": 75
+    },
+    {
+      "pattern": "bursty",
+      "seed": 31,
+      "controller": "hpa_vpa",
+      "label": "HPA + VPA (reactive multi-metric)",
+      "slo": {
+        "count": 14,
+        "durationSeconds": 192
+      },
+      "cost": {
+        "avgReplicas": 35.82083333333333,
+        "nodeHours": 5.870833333333334,
+        "avgNodes": 5.870833333333334
+      },
+      "timeToScale": 25.88888888888889,
+      "churnPerHour": 114
+    },
+    {
+      "pattern": "bursty",
+      "seed": 31,
+      "controller": "reactive_multi_signal",
+      "label": "Reactive Multi-Signal (same signals, no forecast)",
+      "slo": {
+        "count": 14,
+        "durationSeconds": 192
+      },
+      "cost": {
+        "avgReplicas": 35.82083333333333,
+        "nodeHours": 5.870833333333334,
+        "avgNodes": 5.870833333333334
+      },
+      "timeToScale": 25.88888888888889,
+      "churnPerHour": 114
+    },
+    {
+      "pattern": "bursty",
+      "seed": 31,
+      "controller": "proactive",
+      "label": "Proactive Multi-Signal (proposed)",
+      "slo": {
+        "count": 13,
+        "durationSeconds": 174
+      },
+      "cost": {
+        "avgReplicas": 36.46666666666667,
+        "nodeHours": 5.841666666666667,
+        "avgNodes": 5.841666666666667
+      },
+      "timeToScale": 22.555555555555557,
+      "churnPerHour": 100
+    },
+    {
+      "pattern": "queue_driven",
+      "seed": 31,
+      "controller": "default_hpa",
+      "label": "Default HPA",
+      "slo": {
+        "count": 278,
+        "durationSeconds": 793
+      },
+      "cost": {
+        "avgReplicas": 15.770833333333334,
+        "nodeHours": 2.620833333333333,
+        "avgNodes": 2.620833333333333
+      },
+      "timeToScale": 51,
+      "churnPerHour": 33
+    },
+    {
+      "pattern": "queue_driven",
+      "seed": 31,
+      "controller": "tuned_hpa",
+      "label": "Tuned HPA",
+      "slo": {
+        "count": 24,
+        "durationSeconds": 154
+      },
+      "cost": {
+        "avgReplicas": 20.4125,
+        "nodeHours": 5.1,
+        "avgNodes": 5.1
+      },
+      "timeToScale": 30.4,
+      "churnPerHour": 73
+    },
+    {
+      "pattern": "queue_driven",
+      "seed": 31,
+      "controller": "hpa_vpa",
+      "label": "HPA + VPA (reactive multi-metric)",
+      "slo": {
+        "count": 22,
+        "durationSeconds": 167
+      },
+      "cost": {
+        "avgReplicas": 23.770833333333332,
+        "nodeHours": 5.1,
+        "avgNodes": 5.1
+      },
+      "timeToScale": 36.4,
+      "churnPerHour": 107
+    },
+    {
+      "pattern": "queue_driven",
+      "seed": 31,
+      "controller": "reactive_multi_signal",
+      "label": "Reactive Multi-Signal (same signals, no forecast)",
+      "slo": {
+        "count": 22,
+        "durationSeconds": 167
+      },
+      "cost": {
+        "avgReplicas": 23.770833333333332,
+        "nodeHours": 5.1,
+        "avgNodes": 5.1
+      },
+      "timeToScale": 36.4,
+      "churnPerHour": 107
+    },
+    {
+      "pattern": "queue_driven",
+      "seed": 31,
+      "controller": "proactive",
+      "label": "Proactive Multi-Signal (proposed)",
+      "slo": {
+        "count": 19,
+        "durationSeconds": 131
+      },
+      "cost": {
+        "avgReplicas": 23.8125,
+        "nodeHours": 5.1125,
+        "avgNodes": 5.1125
+      },
+      "timeToScale": 30.4,
+      "churnPerHour": 95
+    },
+    {
+      "pattern": "mixed",
+      "seed": 31,
+      "controller": "default_hpa",
+      "label": "Default HPA",
+      "slo": {
+        "count": 55,
+        "durationSeconds": 247
+      },
+      "cost": {
+        "avgReplicas": 10.116666666666667,
+        "nodeHours": 1.8291666666666666,
+        "avgNodes": 1.8291666666666666
+      },
+      "timeToScale": 257.14285714285717,
+      "churnPerHour": 23
+    },
+    {
+      "pattern": "mixed",
+      "seed": 31,
+      "controller": "tuned_hpa",
+      "label": "Tuned HPA",
+      "slo": {
+        "count": 9,
+        "durationSeconds": 96
+      },
+      "cost": {
+        "avgReplicas": 23.579166666666666,
+        "nodeHours": 5.870833333333334,
+        "avgNodes": 5.870833333333334
+      },
+      "timeToScale": 21.142857142857142,
+      "churnPerHour": 70
+    },
+    {
+      "pattern": "mixed",
+      "seed": 31,
+      "controller": "hpa_vpa",
+      "label": "HPA + VPA (reactive multi-metric)",
+      "slo": {
+        "count": 11,
+        "durationSeconds": 95
+      },
+      "cost": {
+        "avgReplicas": 24.279166666666665,
+        "nodeHours": 5.870833333333334,
+        "avgNodes": 5.870833333333334
+      },
+      "timeToScale": 51.714285714285715,
+      "churnPerHour": 93
+    },
+    {
+      "pattern": "mixed",
+      "seed": 31,
+      "controller": "reactive_multi_signal",
+      "label": "Reactive Multi-Signal (same signals, no forecast)",
+      "slo": {
+        "count": 11,
+        "durationSeconds": 95
+      },
+      "cost": {
+        "avgReplicas": 24.279166666666665,
+        "nodeHours": 5.870833333333334,
+        "avgNodes": 5.870833333333334
+      },
+      "timeToScale": 51.714285714285715,
+      "churnPerHour": 93
+    },
+    {
+      "pattern": "mixed",
+      "seed": 31,
+      "controller": "proactive",
+      "label": "Proactive Multi-Signal (proposed)",
+      "slo": {
+        "count": 12,
+        "durationSeconds": 86
+      },
+      "cost": {
+        "avgReplicas": 24.25,
+        "nodeHours": 5.841666666666667,
+        "avgNodes": 5.841666666666667
+      },
+      "timeToScale": 11.142857142857142,
+      "churnPerHour": 83
+    },
+    {
+      "pattern": "bursty",
+      "seed": 37,
+      "controller": "default_hpa",
+      "label": "Default HPA",
+      "slo": {
+        "count": 68,
+        "durationSeconds": 553
+      },
+      "cost": {
+        "avgReplicas": 17.508333333333333,
+        "nodeHours": 2.995833333333333,
+        "avgNodes": 2.995833333333333
+      },
+      "timeToScale": 300,
+      "churnPerHour": 33
+    },
+    {
+      "pattern": "bursty",
+      "seed": 37,
+      "controller": "tuned_hpa",
+      "label": "Tuned HPA",
+      "slo": {
+        "count": 16,
+        "durationSeconds": 219
+      },
+      "cost": {
+        "avgReplicas": 32.483333333333334,
+        "nodeHours": 5.870833333333334,
+        "avgNodes": 5.870833333333334
+      },
+      "timeToScale": 27,
+      "churnPerHour": 83
+    },
+    {
+      "pattern": "bursty",
+      "seed": 37,
+      "controller": "hpa_vpa",
+      "label": "HPA + VPA (reactive multi-metric)",
+      "slo": {
+        "count": 14,
+        "durationSeconds": 142
+      },
+      "cost": {
+        "avgReplicas": 38.483333333333334,
+        "nodeHours": 5.870833333333334,
+        "avgNodes": 5.870833333333334
+      },
+      "timeToScale": 20.333333333333332,
+      "churnPerHour": 121
+    },
+    {
+      "pattern": "bursty",
+      "seed": 37,
+      "controller": "reactive_multi_signal",
+      "label": "Reactive Multi-Signal (same signals, no forecast)",
+      "slo": {
+        "count": 14,
+        "durationSeconds": 142
+      },
+      "cost": {
+        "avgReplicas": 38.483333333333334,
+        "nodeHours": 5.870833333333334,
+        "avgNodes": 5.870833333333334
+      },
+      "timeToScale": 20.333333333333332,
+      "churnPerHour": 121
+    },
+    {
+      "pattern": "bursty",
+      "seed": 37,
+      "controller": "proactive",
+      "label": "Proactive Multi-Signal (proposed)",
+      "slo": {
+        "count": 15,
+        "durationSeconds": 150
+      },
+      "cost": {
+        "avgReplicas": 36.395833333333336,
+        "nodeHours": 5.870833333333334,
+        "avgNodes": 5.870833333333334
+      },
+      "timeToScale": 20.333333333333332,
+      "churnPerHour": 109
+    },
+    {
+      "pattern": "queue_driven",
+      "seed": 37,
+      "controller": "default_hpa",
+      "label": "Default HPA",
+      "slo": {
+        "count": 378,
+        "durationSeconds": 871
+      },
+      "cost": {
+        "avgReplicas": 16.5125,
+        "nodeHours": 2.3875,
+        "avgNodes": 2.3875
+      },
+      "timeToScale": 37.833333333333336,
+      "churnPerHour": 24
+    },
+    {
+      "pattern": "queue_driven",
+      "seed": 37,
+      "controller": "tuned_hpa",
+      "label": "Tuned HPA",
+      "slo": {
+        "count": 28,
+        "durationSeconds": 156
+      },
+      "cost": {
+        "avgReplicas": 20.679166666666667,
+        "nodeHours": 4.9125,
+        "avgNodes": 4.9125
+      },
+      "timeToScale": 33.333333333333336,
+      "churnPerHour": 65
+    },
+    {
+      "pattern": "queue_driven",
+      "seed": 37,
+      "controller": "hpa_vpa",
+      "label": "HPA + VPA (reactive multi-metric)",
+      "slo": {
+        "count": 26,
+        "durationSeconds": 158
+      },
+      "cost": {
+        "avgReplicas": 25.245833333333334,
+        "nodeHours": 4.9125,
+        "avgNodes": 4.9125
+      },
+      "timeToScale": 34.166666666666664,
+      "churnPerHour": 85
+    },
+    {
+      "pattern": "queue_driven",
+      "seed": 37,
+      "controller": "reactive_multi_signal",
+      "label": "Reactive Multi-Signal (same signals, no forecast)",
+      "slo": {
+        "count": 26,
+        "durationSeconds": 158
+      },
+      "cost": {
+        "avgReplicas": 25.245833333333334,
+        "nodeHours": 4.9125,
+        "avgNodes": 4.9125
+      },
+      "timeToScale": 34.166666666666664,
+      "churnPerHour": 85
+    },
+    {
+      "pattern": "queue_driven",
+      "seed": 37,
+      "controller": "proactive",
+      "label": "Proactive Multi-Signal (proposed)",
+      "slo": {
+        "count": 14,
+        "durationSeconds": 105
+      },
+      "cost": {
+        "avgReplicas": 23.633333333333333,
+        "nodeHours": 4.908333333333333,
+        "avgNodes": 4.908333333333333
+      },
+      "timeToScale": 26.666666666666668,
+      "churnPerHour": 79
+    },
+    {
+      "pattern": "mixed",
+      "seed": 37,
+      "controller": "default_hpa",
+      "label": "Default HPA",
+      "slo": {
+        "count": 73,
+        "durationSeconds": 289
+      },
+      "cost": {
+        "avgReplicas": 9.770833333333334,
+        "nodeHours": 1.6916666666666667,
+        "avgNodes": 1.6916666666666667
+      },
+      "timeToScale": 233.33333333333334,
+      "churnPerHour": 20
+    },
+    {
+      "pattern": "mixed",
+      "seed": 37,
+      "controller": "tuned_hpa",
+      "label": "Tuned HPA",
+      "slo": {
+        "count": 12,
+        "durationSeconds": 98
+      },
+      "cost": {
+        "avgReplicas": 25.225,
+        "nodeHours": 5.870833333333334,
+        "avgNodes": 5.870833333333334
+      },
+      "timeToScale": 16.77777777777778,
+      "churnPerHour": 73
+    },
+    {
+      "pattern": "mixed",
+      "seed": 37,
+      "controller": "hpa_vpa",
+      "label": "HPA + VPA (reactive multi-metric)",
+      "slo": {
+        "count": 11,
+        "durationSeconds": 77
+      },
+      "cost": {
+        "avgReplicas": 27.2,
+        "nodeHours": 5.870833333333334,
+        "avgNodes": 5.870833333333334
+      },
+      "timeToScale": 48.22222222222222,
+      "churnPerHour": 97
+    },
+    {
+      "pattern": "mixed",
+      "seed": 37,
+      "controller": "reactive_multi_signal",
+      "label": "Reactive Multi-Signal (same signals, no forecast)",
+      "slo": {
+        "count": 11,
+        "durationSeconds": 77
+      },
+      "cost": {
+        "avgReplicas": 27.2,
+        "nodeHours": 5.870833333333334,
+        "avgNodes": 5.870833333333334
+      },
+      "timeToScale": 48.22222222222222,
+      "churnPerHour": 97
+    },
+    {
+      "pattern": "mixed",
+      "seed": 37,
+      "controller": "proactive",
+      "label": "Proactive Multi-Signal (proposed)",
+      "slo": {
+        "count": 8,
+        "durationSeconds": 61
+      },
+      "cost": {
+        "avgReplicas": 26.720833333333335,
+        "nodeHours": 5.870833333333334,
+        "avgNodes": 5.870833333333334
+      },
+      "timeToScale": 13.555555555555555,
+      "churnPerHour": 85
+    },
+    {
+      "pattern": "bursty",
+      "seed": 41,
+      "controller": "default_hpa",
+      "label": "Default HPA",
+      "slo": {
+        "count": 133,
+        "durationSeconds": 630
+      },
+      "cost": {
+        "avgReplicas": 15.7875,
+        "nodeHours": 2.558333333333333,
+        "avgNodes": 2.558333333333333
+      },
+      "timeToScale": 300,
+      "churnPerHour": 31
+    },
+    {
+      "pattern": "bursty",
+      "seed": 41,
+      "controller": "tuned_hpa",
+      "label": "Tuned HPA",
+      "slo": {
+        "count": 15,
+        "durationSeconds": 172
+      },
+      "cost": {
+        "avgReplicas": 30.7625,
+        "nodeHours": 5.870833333333334,
+        "avgNodes": 5.870833333333334
+      },
+      "timeToScale": 22.666666666666668,
+      "churnPerHour": 74
+    },
+    {
+      "pattern": "bursty",
+      "seed": 41,
+      "controller": "hpa_vpa",
+      "label": "HPA + VPA (reactive multi-metric)",
+      "slo": {
+        "count": 13,
+        "durationSeconds": 135
+      },
+      "cost": {
+        "avgReplicas": 36.295833333333334,
+        "nodeHours": 5.870833333333334,
+        "avgNodes": 5.870833333333334
+      },
+      "timeToScale": 16,
+      "churnPerHour": 113
+    },
+    {
+      "pattern": "bursty",
+      "seed": 41,
+      "controller": "reactive_multi_signal",
+      "label": "Reactive Multi-Signal (same signals, no forecast)",
+      "slo": {
+        "count": 13,
+        "durationSeconds": 135
+      },
+      "cost": {
+        "avgReplicas": 36.295833333333334,
+        "nodeHours": 5.870833333333334,
+        "avgNodes": 5.870833333333334
+      },
+      "timeToScale": 16,
+      "churnPerHour": 113
+    },
+    {
+      "pattern": "bursty",
+      "seed": 41,
+      "controller": "proactive",
+      "label": "Proactive Multi-Signal (proposed)",
+      "slo": {
+        "count": 15,
+        "durationSeconds": 126
+      },
+      "cost": {
+        "avgReplicas": 34.90833333333333,
+        "nodeHours": 5.841666666666667,
+        "avgNodes": 5.841666666666667
+      },
+      "timeToScale": 16,
+      "churnPerHour": 109
+    },
+    {
+      "pattern": "queue_driven",
+      "seed": 41,
+      "controller": "default_hpa",
+      "label": "Default HPA",
+      "slo": {
+        "count": 250,
+        "durationSeconds": 638
+      },
+      "cost": {
+        "avgReplicas": 13.741666666666667,
+        "nodeHours": 1.8333333333333333,
+        "avgNodes": 1.8333333333333333
+      },
+      "timeToScale": 35.666666666666664,
+      "churnPerHour": 24
+    },
+    {
+      "pattern": "queue_driven",
+      "seed": 41,
+      "controller": "tuned_hpa",
+      "label": "Tuned HPA",
+      "slo": {
+        "count": 21,
+        "durationSeconds": 123
+      },
+      "cost": {
+        "avgReplicas": 19.008333333333333,
+        "nodeHours": 5.179166666666666,
+        "avgNodes": 5.179166666666666
+      },
+      "timeToScale": 24.166666666666668,
+      "churnPerHour": 67
+    },
+    {
+      "pattern": "queue_driven",
+      "seed": 41,
+      "controller": "hpa_vpa",
+      "label": "HPA + VPA (reactive multi-metric)",
+      "slo": {
+        "count": 22,
+        "durationSeconds": 98
+      },
+      "cost": {
+        "avgReplicas": 19.141666666666666,
+        "nodeHours": 5.179166666666666,
+        "avgNodes": 5.179166666666666
+      },
+      "timeToScale": 26.666666666666668,
+      "churnPerHour": 88
+    },
+    {
+      "pattern": "queue_driven",
+      "seed": 41,
+      "controller": "reactive_multi_signal",
+      "label": "Reactive Multi-Signal (same signals, no forecast)",
+      "slo": {
+        "count": 22,
+        "durationSeconds": 98
+      },
+      "cost": {
+        "avgReplicas": 19.141666666666666,
+        "nodeHours": 5.179166666666666,
+        "avgNodes": 5.179166666666666
+      },
+      "timeToScale": 26.666666666666668,
+      "churnPerHour": 88
+    },
+    {
+      "pattern": "queue_driven",
+      "seed": 41,
+      "controller": "proactive",
+      "label": "Proactive Multi-Signal (proposed)",
+      "slo": {
+        "count": 12,
+        "durationSeconds": 82
+      },
+      "cost": {
+        "avgReplicas": 19.2875,
+        "nodeHours": 5.183333333333334,
+        "avgNodes": 5.183333333333334
+      },
+      "timeToScale": 26.666666666666668,
+      "churnPerHour": 80
+    },
+    {
+      "pattern": "mixed",
+      "seed": 41,
+      "controller": "default_hpa",
+      "label": "Default HPA",
+      "slo": {
+        "count": 111,
+        "durationSeconds": 406
+      },
+      "cost": {
+        "avgReplicas": 10.441666666666666,
+        "nodeHours": 1.7708333333333333,
+        "avgNodes": 1.7708333333333333
+      },
+      "timeToScale": 300,
+      "churnPerHour": 28
+    },
+    {
+      "pattern": "mixed",
+      "seed": 41,
+      "controller": "tuned_hpa",
+      "label": "Tuned HPA",
+      "slo": {
+        "count": 13,
+        "durationSeconds": 124
+      },
+      "cost": {
+        "avgReplicas": 22.558333333333334,
+        "nodeHours": 5.870833333333334,
+        "avgNodes": 5.870833333333334
+      },
+      "timeToScale": 66.71428571428571,
+      "churnPerHour": 69
+    },
+    {
+      "pattern": "mixed",
+      "seed": 41,
+      "controller": "hpa_vpa",
+      "label": "HPA + VPA (reactive multi-metric)",
+      "slo": {
+        "count": 12,
+        "durationSeconds": 116
+      },
+      "cost": {
+        "avgReplicas": 25.758333333333333,
+        "nodeHours": 5.870833333333334,
+        "avgNodes": 5.870833333333334
+      },
+      "timeToScale": 64.57142857142857,
+      "churnPerHour": 96
+    },
+    {
+      "pattern": "mixed",
+      "seed": 41,
+      "controller": "reactive_multi_signal",
+      "label": "Reactive Multi-Signal (same signals, no forecast)",
+      "slo": {
+        "count": 12,
+        "durationSeconds": 116
+      },
+      "cost": {
+        "avgReplicas": 25.758333333333333,
+        "nodeHours": 5.870833333333334,
+        "avgNodes": 5.870833333333334
+      },
+      "timeToScale": 64.57142857142857,
+      "churnPerHour": 96
+    },
+    {
+      "pattern": "mixed",
+      "seed": 41,
+      "controller": "proactive",
+      "label": "Proactive Multi-Signal (proposed)",
+      "slo": {
+        "count": 10,
+        "durationSeconds": 102
+      },
+      "cost": {
+        "avgReplicas": 23.420833333333334,
+        "nodeHours": 5.841666666666667,
+        "avgNodes": 5.841666666666667
+      },
+      "timeToScale": 23.857142857142858,
+      "churnPerHour": 78
+    }
+  ],
+  "aggregate": [
+    {
+      "controller": "default_hpa",
+      "label": "Default HPA",
+      "avgSloViolationCount": 151.33333333333334,
+      "avgSloViolationDurationSeconds": 607.3333333333334,
+      "avgTimeToScaleSeconds": 184,
+      "avgReplicas": 13.719444444444443,
+      "avgNodeHours": 2.2597222222222224,
+      "avgChurnPerHour": 31.666666666666668,
+      "avgOscillationsPerHour": 10.666666666666666,
+      "sloDurationReductionPct": 0,
+      "timeToScaleImprovementPct": 0,
+      "sloDurationReductionVsTunedPct": -254.4747081712062,
+      "costReductionPct": 59.49713716704007
+    },
+    {
+      "controller": "tuned_hpa",
+      "label": "Tuned HPA",
+      "avgSloViolationCount": 17.333333333333332,
+      "avgSloViolationDurationSeconds": 171.33333333333334,
+      "avgTimeToScaleSeconds": 26.45925925925926,
+      "avgReplicas": 24.320833333333336,
+      "avgNodeHours": 5.579166666666667,
+      "avgChurnPerHour": 72,
+      "avgOscillationsPerHour": 14,
+      "sloDurationReductionPct": 71.78924259055982,
+      "timeToScaleImprovementPct": 85.61996779388083,
+      "sloDurationReductionVsTunedPct": 0,
+      "costReductionPct": 0
+    },
+    {
+      "controller": "hpa_vpa",
+      "label": "HPA + VPA (reactive multi-metric)",
+      "avgSloViolationCount": 14.666666666666666,
+      "avgSloViolationDurationSeconds": 142,
+      "avgTimeToScaleSeconds": 25.9037037037037,
+      "avgReplicas": 28.281944444444445,
+      "avgNodeHours": 5.579166666666667,
+      "avgChurnPerHour": 99.66666666666667,
+      "avgOscillationsPerHour": 13.333333333333334,
+      "sloDurationReductionPct": 76.61909989023052,
+      "timeToScaleImprovementPct": 85.92190016103059,
+      "sloDurationReductionVsTunedPct": 17.120622568093392,
+      "costReductionPct": 0
+    },
+    {
+      "controller": "reactive_multi_signal",
+      "label": "Reactive Multi-Signal (same signals, no forecast)",
+      "avgSloViolationCount": 14.666666666666666,
+      "avgSloViolationDurationSeconds": 142,
+      "avgTimeToScaleSeconds": 25.9037037037037,
+      "avgReplicas": 28.281944444444445,
+      "avgNodeHours": 5.579166666666667,
+      "avgChurnPerHour": 99.66666666666667,
+      "avgOscillationsPerHour": 13.333333333333334,
+      "sloDurationReductionPct": 76.61909989023052,
+      "timeToScaleImprovementPct": 85.92190016103059,
+      "sloDurationReductionVsTunedPct": 17.120622568093392,
+      "costReductionPct": 0
+    },
+    {
+      "controller": "proactive",
+      "label": "Proactive Multi-Signal (proposed)",
+      "avgSloViolationCount": 14.333333333333334,
+      "avgSloViolationDurationSeconds": 140,
+      "avgTimeToScaleSeconds": 25.9037037037037,
+      "avgReplicas": 26.91944444444444,
+      "avgNodeHours": 5.570833333333333,
+      "avgChurnPerHour": 92,
+      "avgOscillationsPerHour": 15.666666666666666,
+      "sloDurationReductionPct": 76.94840834248079,
+      "timeToScaleImprovementPct": 85.92190016103059,
+      "sloDurationReductionVsTunedPct": 18.287937743190668,
+      "costReductionPct": 0.14936519790889466
+    }
+  ],
+  "multiSeedStats": [
+    {
+      "controller": "default_hpa",
+      "label": "Default HPA",
+      "n": 24,
+      "sloViolationDurationSeconds": {
+        "n": 24,
+        "mean": 568.5833333333334,
+        "std": 225.09822332690126,
+        "sem": 45.94798242983015,
+        "ci95": [
+          478.52528777086627,
+          658.6413788958005
+        ]
+      },
+      "nodeHours": {
+        "n": 24,
+        "mean": 2.2255208333333334,
+        "std": 0.458689440875076,
+        "sem": 0.09362959004553749,
+        "ci95": [
+          2.04200683684408,
+          2.4090348298225868
+        ]
+      },
+      "timeToScaleSeconds": {
+        "n": 24,
+        "mean": 192.31352813852814,
+        "std": 107.31182524137064,
+        "sem": 21.904934600673197,
+        "ci95": [
+          149.37985632120868,
+          235.2471999558476
+        ]
+      },
+      "churnPerHour": {
+        "n": 24,
+        "mean": 29.375,
+        "std": 5.314561620434117,
+        "sem": 1.084830348053543,
+        "ci95": [
+          27.248732517815057,
+          31.501267482184943
+        ]
+      }
+    },
+    {
+      "controller": "tuned_hpa",
+      "label": "Tuned HPA",
+      "n": 24,
+      "sloViolationDurationSeconds": {
+        "n": 24,
+        "mean": 150.875,
+        "std": 38.588478230864624,
+        "sem": 7.876840134676239,
+        "ci95": [
+          135.43639333603457,
+          166.31360666396543
+        ]
+      },
+      "nodeHours": {
+        "n": 24,
+        "mean": 5.5751736111111105,
+        "std": 0.4064164545029406,
+        "sem": 0.08295941138360494,
+        "ci95": [
+          5.4125731647992446,
+          5.7377740574229765
+        ]
+      },
+      "timeToScaleSeconds": {
+        "n": 24,
+        "mean": 28.13715578403078,
+        "std": 11.259217440452701,
+        "sem": 2.2982781360128635,
+        "ci95": [
+          23.63253063744557,
+          32.641780930615994
+        ]
+      },
+      "churnPerHour": {
+        "n": 24,
+        "mean": 73.16666666666667,
+        "std": 6.356555443119276,
+        "sem": 1.2975264464461038,
+        "ci95": [
+          70.6235148316323,
+          75.70981850170104
+        ]
+      }
+    },
+    {
+      "controller": "hpa_vpa",
+      "label": "HPA + VPA (reactive multi-metric)",
+      "n": 24,
+      "sloViolationDurationSeconds": {
+        "n": 24,
+        "mean": 125.79166666666667,
+        "std": 28.876015572829967,
+        "sem": 5.894291996507861,
+        "ci95": [
+          114.23885435351127,
+          137.34447897982207
+        ]
+      },
+      "nodeHours": {
+        "n": 24,
+        "mean": 5.5751736111111105,
+        "std": 0.4064164545029406,
+        "sem": 0.08295941138360494,
+        "ci95": [
+          5.4125731647992446,
+          5.7377740574229765
+        ]
+      },
+      "timeToScaleSeconds": {
+        "n": 24,
+        "mean": 30.49029280904281,
+        "std": 13.084708924979495,
+        "sem": 2.670905024920065,
+        "ci95": [
+          25.25531896019948,
+          35.72526665788614
+        ]
+      },
+      "churnPerHour": {
+        "n": 24,
+        "mean": 99.58333333333333,
+        "std": 11.956139651338923,
+        "sem": 2.4405367866031615,
+        "ci95": [
+          94.79988123159113,
+          104.36678543507553
+        ]
+      }
+    },
+    {
+      "controller": "reactive_multi_signal",
+      "label": "Reactive Multi-Signal (same signals, no forecast)",
+      "n": 24,
+      "sloViolationDurationSeconds": {
+        "n": 24,
+        "mean": 125.79166666666667,
+        "std": 28.876015572829967,
+        "sem": 5.894291996507861,
+        "ci95": [
+          114.23885435351127,
+          137.34447897982207
+        ]
+      },
+      "nodeHours": {
+        "n": 24,
+        "mean": 5.5751736111111105,
+        "std": 0.4064164545029406,
+        "sem": 0.08295941138360494,
+        "ci95": [
+          5.4125731647992446,
+          5.7377740574229765
+        ]
+      },
+      "timeToScaleSeconds": {
+        "n": 24,
+        "mean": 30.49029280904281,
+        "std": 13.084708924979495,
+        "sem": 2.670905024920065,
+        "ci95": [
+          25.25531896019948,
+          35.72526665788614
+        ]
+      },
+      "churnPerHour": {
+        "n": 24,
+        "mean": 99.58333333333333,
+        "std": 11.956139651338923,
+        "sem": 2.4405367866031615,
+        "ci95": [
+          94.79988123159113,
+          104.36678543507553
+        ]
+      }
+    },
+    {
+      "controller": "proactive",
+      "label": "Proactive Multi-Signal (proposed)",
+      "n": 24,
+      "sloViolationDurationSeconds": {
+        "n": 24,
+        "mean": 112.66666666666667,
+        "std": 27.53443167265727,
+        "sem": 5.620442329628188,
+        "ci95": [
+          101.65059970059542,
+          123.68273363273792
+        ]
+      },
+      "nodeHours": {
+        "n": 24,
+        "mean": 5.568576388888889,
+        "std": 0.39907611292963985,
+        "sem": 0.08146107043424451,
+        "ci95": [
+          5.40891269083777,
+          5.7282400869400085
+        ]
+      },
+      "timeToScaleSeconds": {
+        "n": 24,
+        "mean": 21.509901094276092,
+        "std": 7.14507578564207,
+        "sem": 1.4584824873615592,
+        "ci95": [
+          18.651275419047437,
+          24.368526769504747
+        ]
+      },
+      "churnPerHour": {
+        "n": 24,
+        "mean": 90.83333333333333,
+        "std": 11.642002915480564,
+        "sem": 2.376413893910125,
+        "ci95": [
+          86.17556210126948,
+          95.49110456539718
+        ]
+      }
+    }
+  ],
+  "significance": [
+    {
+      "comparison": "proactive_vs_tuned_hpa",
+      "n": 24,
+      "sloViolationDuration": {
+        "n": 24,
+        "meanDiff": -38.208333333333336,
+        "t": -9.627618119175606,
+        "df": 23,
+        "p": 1.5566635517118474e-9
+      },
+      "nodeHours": {
+        "n": 24,
+        "meanDiff": -0.006597222222222181,
+        "t": -1.0310131394477793,
+        "df": 23,
+        "p": 0.31325522950395
+      }
+    },
+    {
+      "comparison": "proactive_vs_hpa_vpa",
+      "n": 24,
+      "sloViolationDuration": {
+        "n": 24,
+        "meanDiff": -13.125,
+        "t": -4.265384439004682,
+        "df": 23,
+        "p": 0.0002906038204721271
+      },
+      "nodeHours": {
+        "n": 24,
+        "meanDiff": -0.006597222222222181,
+        "t": -1.0310131394477793,
+        "df": 23,
+        "p": 0.31325522950395
+      }
+    },
+    {
+      "comparison": "proactive_vs_reactive_multi_signal",
+      "n": 24,
+      "sloViolationDuration": {
+        "n": 24,
+        "meanDiff": -13.125,
+        "t": -4.265384439004682,
+        "df": 23,
+        "p": 0.0002906038204721271
+      },
+      "nodeHours": {
+        "n": 24,
+        "meanDiff": -0.006597222222222181,
+        "t": -1.0310131394477793,
+        "df": 23,
+        "p": 0.31325522950395
+      }
+    },
+    {
+      "comparison": "proactive_vs_default_hpa",
+      "n": 24,
+      "sloViolationDuration": {
+        "n": 24,
+        "meanDiff": -455.9166666666667,
+        "t": -10.166870476736028,
+        "df": 23,
+        "p": 5.589147197455667e-10
+      },
+      "nodeHours": {
+        "n": 24,
+        "meanDiff": 3.343055555555557,
+        "t": 25.007451116898775,
+        "df": 23,
+        "p": 3.5273591138096224e-18
+      }
+    }
+  ],
+  "forecastSummary": {
+    "p99": {
+      "model": {
+        "accuracyPct": 82.2669355629121,
+        "mape": 1033.569953228343,
+        "rmse": 8261.018212249219,
+        "r2": -2.850232709157819
+      },
+      "holtOnly": {
+        "accuracyPct": 78.48484517562001,
+        "mape": 1730.0902343319594,
+        "rmse": 11783.429805816391,
+        "r2": -7.077253101909689
+      },
+      "persistence": {
+        "accuracyPct": 85.91819722554266,
+        "mape": 550.0225654605168,
+        "rmse": 6165.646191579807,
+        "r2": -1.0823886676146437
+      },
+      "movingAverage": {
+        "accuracyPct": 85.17004039396413,
+        "mape": 608.9009178522197,
+        "rmse": 5808.215637387762,
+        "r2": -0.8289395966424472
+      },
+      "linearDrift": {
+        "accuracyPct": 67.8841176550447,
+        "mape": 2572.9461752914162,
+        "rmse": 16208.265231131445,
+        "r2": -14.410490107394432
+      }
+    },
+    "cpu": {
+      "model": {
+        "accuracyPct": 81.61716470304547,
+        "mape": 63.16374660691334,
+        "rmse": 20.556960919732873,
+        "r2": -0.47428138938378894
+      },
+      "holtOnly": {
+        "accuracyPct": 77.70628210129976,
+        "mape": 79.00077305698399,
+        "rmse": 24.572354776345225,
+        "r2": -1.1616885701762978
+      },
+      "persistence": {
+        "accuracyPct": 83.15206581480295,
+        "mape": 60.281522414186156,
+        "rmse": 18.450348626052058,
+        "r2": -0.1560662686429243
+      },
+      "movingAverage": {
+        "accuracyPct": 81.13793599569406,
+        "mape": 68.9941936737173,
+        "rmse": 18.986792125549186,
+        "r2": -0.20611725276390006
+      },
+      "linearDrift": {
+        "accuracyPct": 70.50050756289643,
+        "mape": 143.40873791959015,
+        "rmse": 44.697276471545926,
+        "r2": -6.215269356757432
+      }
+    },
+    "ram": {
+      "model": {
+        "accuracyPct": 96.15542535740924,
+        "mape": 7.927883397871551,
+        "rmse": 5.361486027736706,
+        "r2": 0.5261272518674681
+      },
+      "holtOnly": {
+        "accuracyPct": 96.26442002833899,
+        "mape": 7.670010433619015,
+        "rmse": 5.293905521175173,
+        "r2": 0.529423219530969
+      },
+      "persistence": {
+        "accuracyPct": 95.5034633956177,
+        "mape": 9.335285415197234,
+        "rmse": 6.159712774256025,
+        "r2": 0.3819811504808577
+      },
+      "movingAverage": {
+        "accuracyPct": 94.7616719064734,
+        "mape": 10.945781518950014,
+        "rmse": 7.095990769551385,
+        "r2": 0.1833257270188671
+      },
+      "linearDrift": {
+        "accuracyPct": 94.47222079174814,
+        "mape": 11.234581686124832,
+        "rmse": 8.9479516440891,
+        "r2": -0.37785173938694755
+      }
+    },
+    "pool": {
+      "model": {
+        "accuracyPct": 88.29361439103009,
+        "mape": 33.75983062642925,
+        "rmse": 22.63992020916344,
+        "r2": -1.6086302681424858
+      },
+      "holtOnly": {
+        "accuracyPct": 85.68203039696209,
+        "mape": 48.129861197027594,
+        "rmse": 31.178238678879964,
+        "r2": -4.05631984287984
+      },
+      "persistence": {
+        "accuracyPct": 90.5884292563398,
+        "mape": 26.271060856173793,
+        "rmse": 18.47828637969656,
+        "r2": -0.702424708141033
+      },
+      "movingAverage": {
+        "accuracyPct": 89.84477990728158,
+        "mape": 27.69328439255626,
+        "rmse": 18.0038319356048,
+        "r2": -0.5996862310380268
+      },
+      "linearDrift": {
+        "accuracyPct": 79.95195218628885,
+        "mape": 76.95883804387363,
+        "rmse": 44.649200096508274,
+        "r2": -9.380624211328266
+      }
+    }
+  },
+  "classificationSummary": {
+    "holt": {
+      "precision": 0.11872402036336464,
+      "recall": 0.10155273240572697,
+      "f1": 0.163669297451158,
+      "accuracy": 0.9384903891233005
+    },
+    "persistence": {
+      "precision": 0.11481056257175659,
+      "recall": 0.10887275660415408,
+      "f1": 0.16744520829660967,
+      "accuracy": 0.9359587435536803
+    }
+  },
+  "classificationSummaryWindowed": {
+    "holt": {
+      "precision": 0.8467995566529325,
+      "recall": 0.23251135398774347,
+      "f1": 0.3642509995477831,
+      "accuracy": 0.8939814814814815
+    },
+    "persistence": {
+      "precision": 0.9421737466513586,
+      "recall": 0.276157237803122,
+      "f1": 0.4264408104038055,
+      "accuracy": 0.9045475855602438
+    }
+  },
+  "thresholdSweepSummary": {
+    "bestF1": 0.4517781209934113,
+    "bestF1Precision": 0.4786285537317054,
+    "bestF1Recall": 0.47571179122004476,
+    "prAuc": 0.48045556687916813
+  }
+}

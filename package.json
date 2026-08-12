@@ -1,0 +1,17 @@
+{
+  "name": "proactive-autoscaler",
+  "version": "1.0.0",
+  "description": "Proactive, multi-signal (p90/p99 latency, CPU, RAM, connection pool) SLO & cost-aware autoscaling simulator — a non-Kubernetes reproduction and extension of the reactive/HPA-style baselines.",
+  "main": "src/server.js",
+  "type": "commonjs",
+  "scripts": {
+    "generate": "node src/data/generateDummyData.js",
+    "simulate": "node src/engine/runSimulation.js",
+    "sensitivity": "node src/engine/runSensitivity.js",
+    "start": "node src/server.js",
+    "all": "npm run generate && npm run simulate && npm run sensitivity"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

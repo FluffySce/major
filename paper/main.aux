@@ -1,0 +1,101 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\citation{ref1}
+\citation{ref3}
+\citation{ref_base}
+\@writefile{toc}{\contentsline {section}{\numberline {I}Introduction}{1}{section.1}\protected@file@percent }
+\citation{ref_base}
+\citation{gardner1985}
+\citation{ref_base}
+\citation{ref1}
+\citation{ref13}
+\citation{ref17}
+\@writefile{toc}{\contentsline {section}{\numberline {II}Background and Related Work}{2}{section.2}\protected@file@percent }
+\citation{ref8}
+\citation{ref9}
+\citation{ref11}
+\citation{ref14,ref15}
+\citation{ref_base}
+\citation{ref_base}
+\@writefile{toc}{\contentsline {section}{\numberline {III}Problem Analysis}{3}{section.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-A}}Reactive-only decision timing}{3}{subsection.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-B}}Narrow signal coverage}{3}{subsection.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-C}}Pod/node schedulability coordination}{3}{subsection.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-D}}Absence of forecast-accuracy evaluation}{3}{subsection.3.4}\protected@file@percent }
+\citation{gardner1985}
+\citation{ref_base}
+\citation{gardner1985}
+\@writefile{toc}{\contentsline {section}{\numberline {IV}Proposed Framework}{4}{section.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-A}}Design Principles}{4}{subsection.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-B}}Architecture}{4}{subsection.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-C}}Forecasting Layer}{4}{subsection.4.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Proactive multi-signal autoscaling framework: a forecasting layer is inserted between signal collection and SLO-driven decision logic, so guardrails and actuation operate on predicted rather than current signal values.}}{4}{figure.1}\protected@file@percent }
+\newlabel{fig:architecture}{{1}{4}{Proactive multi-signal autoscaling framework: a forecasting layer is inserted between signal collection and SLO-driven decision logic, so guardrails and actuation operate on predicted rather than current signal values}{figure.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-D}}Risk Fusion and Guardrails}{5}{subsection.4.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {V}Evaluation Methodology}{5}{section.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-A}}Closed-Loop Simulator}{5}{subsection.5.1}\protected@file@percent }
+\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces Proactive Multi-Signal Decision Pipeline (one control tick)}}{5}{algorithm.1}\protected@file@percent }
+\newlabel{alg:pipeline}{{1}{5}{Risk Fusion and Guardrails}{algorithm.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-B}}Workload Patterns}{5}{subsection.5.2}\protected@file@percent }
+\citation{ref_base}
+\citation{ref_base}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-C}}Baselines}{6}{subsection.5.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-D}}Metrics}{6}{subsection.5.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-E}}Statistical Methodology}{6}{subsection.5.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {VI}Results and Discussion}{6}{section.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VI-A}}SLO Adherence}{6}{subsection.6.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VI-B}}Isolating the Forecasting Contribution}{6}{subsection.6.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {I}{\ignorespaces SLO Violation Comparison, Single Seed (averaged across workload patterns)}}{7}{table.1}\protected@file@percent }
+\newlabel{tab:slo}{{I}{7}{SLO Violation Comparison, Single Seed (averaged across workload patterns)}{table.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces SLO violation duration by workload pattern, single seed. HPA+VPA and Reactive Multi-Signal are numerically \emph  {identical} on every pattern (Section~VI-B); the proposed controller is best or tied-best on bursty/queue-driven and worse on mixed for this seed.}}{7}{figure.2}\protected@file@percent }
+\newlabel{fig:slo_pattern}{{2}{7}{SLO violation duration by workload pattern, single seed. HPA+VPA and Reactive Multi-Signal are numerically \emph {identical} on every pattern (Section~VI-B); the proposed controller is best or tied-best on bursty/queue-driven and worse on mixed for this seed}{figure.2}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {II}{\ignorespaces SLO Violation Duration, 24 Replicates (mean $\pm $ std, s)}}{7}{table.2}\protected@file@percent }
+\newlabel{tab:multiseed}{{II}{7}{SLO Violation Duration, 24 Replicates (mean $\pm $ std, s)}{table.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces SLO violation duration, mean $\pm $ 1 std.\ across 24 (pattern, seed) replicates.}}{7}{figure.3}\protected@file@percent }
+\newlabel{fig:multiseed}{{3}{7}{SLO violation duration, mean $\pm $ 1 std.\ across 24 (pattern, seed) replicates}{figure.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VI-C}}Scaling Responsiveness}{7}{subsection.6.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VI-D}}Cost Efficiency}{7}{subsection.6.4}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {III}{\ignorespaces Paired Significance Tests, Proposed Controller vs.\ Baseline (24 pairs)}}{8}{table.3}\protected@file@percent }
+\newlabel{tab:sig}{{III}{8}{Paired Significance Tests, Proposed Controller vs.\ Baseline (24 pairs)}{table.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Demand, replica count, and p99 latency over a 1-hour bursty-workload run for all five controllers (single seed). The proposed controller (gold) scales out ahead of each burst and correspondingly recovers faster below the 300\,ms SLO line (red, dashed). HPA+VPA and Reactive Multi-Signal (purple) overlap almost exactly.}}{8}{figure.4}\protected@file@percent }
+\newlabel{fig:timeseries}{{4}{8}{Demand, replica count, and p99 latency over a 1-hour bursty-workload run for all five controllers (single seed). The proposed controller (gold) scales out ahead of each burst and correspondingly recovers faster below the 300\,ms SLO line (red, dashed). HPA+VPA and Reactive Multi-Signal (purple) overlap almost exactly}{figure.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VI-E}}Stability}{8}{subsection.6.5}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Scaling churn and oscillation events per hour, single seed, averaged across workload patterns.}}{8}{figure.5}\protected@file@percent }
+\newlabel{fig:stability}{{5}{8}{Scaling churn and oscillation events per hour, single seed, averaged across workload patterns}{figure.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VI-F}}Forecast Accuracy}{8}{subsection.6.6}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {IV}{\ignorespaces Forecast Accuracy ($100-\mathrm  {SMAPE}/2$, \%), by Signal and Model}}{9}{table.4}\protected@file@percent }
+\newlabel{tab:forecast}{{IV}{9}{Forecast Accuracy ($100-\mathrm {SMAPE}/2$, \%), by Signal and Model}{table.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Forecast accuracy by signal and model. The adaptive blend (proposed) dominates plain Holt on three of four signals but still trails persistence on the two heavy-tailed ones (p99, connection pool).}}{9}{figure.6}\protected@file@percent }
+\newlabel{fig:forecast}{{6}{9}{Forecast accuracy by signal and model. The adaptive blend (proposed) dominates plain Holt on three of four signals but still trails persistence on the two heavy-tailed ones (p99, connection pool)}{figure.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VI-G}}Overload-Prediction Classification}{9}{subsection.6.7}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {V}{\ignorespaces Overload-Prediction Classification, Point-in-Time Definition}}{9}{table.5}\protected@file@percent }
+\newlabel{tab:class}{{V}{9}{Overload-Prediction Classification, Point-in-Time Definition}{table.5}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {VI}{\ignorespaces Overload-Prediction Classification, Windowed Definition}}{9}{table.6}\protected@file@percent }
+\newlabel{tab:class_windowed}{{VI}{9}{Overload-Prediction Classification, Windowed Definition}{table.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VI-H}}Sensitivity Analysis and Hyperparameter Calibration}{9}{subsection.6.8}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Windowed overload-classification quality (cf.\ the point-in-time definition, Table~\ref {tab:class}, under which F1 is $\approx $0.16 for both models). Both forecasters gain substantially from the windowed re-framing; persistence remains modestly ahead on both definitions, consistent with the point-forecast-accuracy finding in Section~VI-F.}}{10}{figure.7}\protected@file@percent }
+\newlabel{fig:class_windowed}{{7}{10}{Windowed overload-classification quality (cf.\ the point-in-time definition, Table~\ref {tab:class}, under which F1 is $\approx $0.16 for both models). Both forecasters gain substantially from the windowed re-framing; persistence remains modestly ahead on both definitions, consistent with the point-forecast-accuracy finding in Section~VI-F}{figure.7}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces SLO violation duration vs.\ forecast horizon $h$ (tuning seeds, $\phi =0.85$ fixed). Dashed line: Reactive Multi-Signal baseline. No horizon in this range yields a significant improvement.}}{10}{figure.8}\protected@file@percent }
+\newlabel{fig:sens_horizon}{{8}{10}{SLO violation duration vs.\ forecast horizon $h$ (tuning seeds, $\phi =0.85$ fixed). Dashed line: Reactive Multi-Signal baseline. No horizon in this range yields a significant improvement}{figure.8}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VI-I}}Discussion}{10}{subsection.6.9}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces SLO violation duration vs.\ damping factor $\phi $ (tuning seeds, $h=45$\,s fixed). Dashed line: Reactive Multi-Signal baseline. Improvement is monotonic in $\phi $ and becomes significant from $\phi \approx 0.95$; $\phi =0.97$ (dotted) is selected without going to the grid boundary.}}{10}{figure.9}\protected@file@percent }
+\newlabel{fig:sens_phi}{{9}{10}{SLO violation duration vs.\ damping factor $\phi $ (tuning seeds, $h=45$\,s fixed). Dashed line: Reactive Multi-Signal baseline. Improvement is monotonic in $\phi $ and becomes significant from $\phi \approx 0.95$; $\phi =0.97$ (dotted) is selected without going to the grid boundary}{figure.9}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {VII}{\ignorespaces Held-Out Validation of $\phi =0.97$ (3 seeds never used for tuning)}}{10}{table.7}\protected@file@percent }
+\newlabel{tab:holdout}{{VII}{10}{Held-Out Validation of $\phi =0.97$ (3 seeds never used for tuning)}{table.7}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {VII}Limitations and Future Work}{10}{section.7}\protected@file@percent }
+\bibcite{ref_base}{1}
+\bibcite{ref1}{2}
+\bibcite{ref3}{3}
+\bibcite{ref8}{4}
+\bibcite{ref9}{5}
+\bibcite{ref11}{6}
+\bibcite{ref13}{7}
+\bibcite{ref14}{8}
+\bibcite{ref15}{9}
+\bibcite{ref17}{10}
+\bibcite{gardner1985}{11}
+\@writefile{toc}{\contentsline {section}{\numberline {VIII}Conclusion}{11}{section.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{References}{11}{section*.1}\protected@file@percent }
+\gdef \@abspage@last{12}
